@@ -9,5 +9,5 @@
 
 Clone the repository into your your nvim config folder.
 ```sh
-git clone git@gitlab.com:notfirefox/nvim-config.git $HOME/.config/nvim
+git clone https://github.com/notfirefox/nvim-config.git $HOME/.config/nvim
 ```
