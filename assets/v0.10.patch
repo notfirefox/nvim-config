@@ -1,0 +1,167 @@
+diff --git a/README.md b/README.md
+index 8473faf..70a3a21 100644
+--- a/README.md
++++ b/README.md
+@@ -22,7 +22,7 @@ Simple Neovim Config
+ </details>
+ 
+ ## :clipboard: Requirements
+-- Neovim >= 0.9.5
++- Neovim >= 0.10
+ - Linux or macOS
+ 
+ ## :package: Installation
+diff --git a/lazy-lock.json b/lazy-lock.json
+index d82fdd6..2d0b2fc 100644
+--- a/lazy-lock.json
++++ b/lazy-lock.json
+@@ -1,7 +1,5 @@
+ {
+-  "LuaSnip": { "branch": "master", "commit": "c9b9a22904c97d0eb69ccb9bab76037838326817" },
+   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
+-  "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
+   "gruvbox.nvim": { "branch": "main", "commit": "c6f42890551b4827253387e93b035568826a9cb7" },
+   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
+   "nvim-autopairs": { "branch": "master", "commit": "6522027785b305269fa17088395dfc0f456cedd2" },
+diff --git a/lua/core/config.lua b/lua/core/config.lua
+index ce6e064..f633599 100644
+--- a/lua/core/config.lua
++++ b/lua/core/config.lua
+@@ -20,4 +20,4 @@ vim.o.completeopt = "menu,menuone,noinsert"
+ vim.o.colorcolumn = "80"
+ 
+ -- set leader key
+-vim.g.mapleader = " "
++vim.g.mapleader = vim.keycode("<space>")
+diff --git a/lua/core/event.lua b/lua/core/event.lua
+index 861a6af..bbebecf 100644
+--- a/lua/core/event.lua
++++ b/lua/core/event.lua
+@@ -53,24 +53,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
+         end
+ 
+         local bind = vim.keymap.set
++        local methods = vim.lsp.protocol.Methods
+         local opts = { buffer = args.buf }
+         local utils = require("core.utils")
+ 
+-        if client:supports_method("textDocument/codeAction") then
++        if client:supports_method(methods.textDocument_codeAction) then
+             bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+         end
+ 
+-        if client:supports_method("textDocument/hover") then
++        if client:supports_method(methods.textDocument_hover) then
+             bind("n", "K", vim.lsp.buf.hover, opts)
+         end
+ 
+-        if client:supports_method("textDocument/formatting")
++        if client:supports_method(methods.textDocument_formatting)
+         then
+             utils.add_formatting_autocmd(args.buf, client.id)
+             utils.create_clang_format()
+         end
+ 
+-        if client:supports_method("textDocument/rename") then
++        if client:supports_method(methods.textDocument_rename) then
+             bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
+         end
+     end,
+diff --git a/lua/core/plugin.lua b/lua/core/plugin.lua
+index ccddca0..e7202e8 100644
+--- a/lua/core/plugin.lua
++++ b/lua/core/plugin.lua
+@@ -1,6 +1,6 @@
+ -- install plugin manager
+ local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+-if not (vim.uv or vim.loop).fs_stat(lazypath) then
++if not vim.uv.fs_stat(lazypath) then
+     local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+     local out = vim.fn.system({
+         "git",
+diff --git a/lua/core/utils.lua b/lua/core/utils.lua
+index 7cd2e04..c87e5ba 100644
+--- a/lua/core/utils.lua
++++ b/lua/core/utils.lua
+@@ -13,7 +13,7 @@ end
+ -- create clang format file
+ function utils.create_clang_format()
+     local file = vim.fn.expand("~/.clang-format")
+-    if not (vim.uv or vim.loop).fs_stat(file) then
++    if not vim.uv.fs_stat(file) then
+         local text = {
+             "---",
+             "BasedOnStyle: LLVM",
+diff --git a/lua/plugins/completion.lua b/lua/plugins/completion.lua
+index 341558f..615f910 100644
+--- a/lua/plugins/completion.lua
++++ b/lua/plugins/completion.lua
+@@ -1,13 +1,10 @@
+ return {
+     "hrsh7th/nvim-cmp",
+     dependencies = {
+-        "L3MON4D3/LuaSnip",
+         "hrsh7th/cmp-nvim-lsp",
+-        "saadparwaiz1/cmp_luasnip",
+     },
+     config = function()
+         -- variables
+-        local luasnip = require("luasnip")
+         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
+         local cmp = require("cmp")
+ 
+@@ -38,11 +35,6 @@ return {
+                     return vim_item
+                 end
+             },
+-            snippet = {
+-                expand = function(args)
+-                    luasnip.lsp_expand(args.body)
+-                end,
+-            },
+             mapping = cmp.mapping.preset.insert({
+                 ["<C-Space>"] = cmp.mapping.complete(),
+                 ["<CR>"] = cmp.mapping.confirm({
+@@ -50,15 +42,15 @@ return {
+                     select = true,
+                 }),
+                 ["<Tab>"] = cmp.mapping(function(fallback)
+-                    if luasnip.expand_or_jumpable() then
+-                        luasnip.expand_or_jump()
++                    if vim.snippet.active({ direction = 1 }) then
++                        vim.snippet.jump(1)
+                     else
+                         fallback()
+                     end
+                 end, { "i", "s" }),
+                 ["<S-Tab>"] = cmp.mapping(function(fallback)
+-                    if luasnip.jumpable(-1) then
+-                        luasnip.jump(-1)
++                    if vim.snippet.active({ direction = -1 }) then
++                        vim.snippet.jump(-1)
+                     else
+                         fallback()
+                     end
+@@ -66,7 +58,6 @@ return {
+             }),
+             sources = {
+                 { name = "nvim_lsp" },
+-                { name = "luasnip" },
+             },
+         }
+     end,
+diff --git a/lua/plugins/lspconfig.lua b/lua/plugins/lspconfig.lua
+index adda51c..f2e814d 100644
+--- a/lua/plugins/lspconfig.lua
++++ b/lua/plugins/lspconfig.lua
+@@ -64,8 +64,8 @@ return {
+             capabilities = capabilities,
+             on_init = function(client)
+                 local path = client.workspace_folders[1].name
+-                if (vim.uv or vim.loop).fs_stat(path .. "/.luarc.json") or
+-                    (vim.uv or vim.loop).fs_stat(path .. "/.luarc.jsonc") then
++                if vim.uv.fs_stat(path .. "/.luarc.json") or
++                    vim.uv.fs_stat(path .. "/.luarc.jsonc") then
+                     return
+                 end
+                 client.config.settings.Lua = vim.tbl_deep_extend(
