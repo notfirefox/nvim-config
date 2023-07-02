@@ -1,4 +1,4 @@
-# nvim-config
+# Neovim Config
 
 ## Requirements
 - [fd](https://github.com/sharkdp/fd)
