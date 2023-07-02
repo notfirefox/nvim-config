@@ -1,6 +1,3 @@
--- load snippets from snippets folder
--- require('luasnip.loaders.from_lua').load({ paths = './snippets' })
-
 -- variables
 local luasnip = require('luasnip')
 local s = luasnip.s
