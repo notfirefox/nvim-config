@@ -17,7 +17,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
   -- basic features
   use 'windwp/nvim-autopairs'
-  use { 'catppuccin/nvim', as = 'catppuccin' }
+  use { 'ellisonleao/gruvbox.nvim' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-lua/plenary.nvim' -- required by telescope
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.1', }

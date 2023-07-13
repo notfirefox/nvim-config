@@ -1,2 +1,2 @@
 -- setup colorscheme
-vim.cmd("colorscheme catppuccin-latte")
+vim.cmd("colorscheme gruvbox")
