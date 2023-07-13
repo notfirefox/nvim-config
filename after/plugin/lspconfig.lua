@@ -42,11 +42,6 @@ lspconfig.clangd.setup {
   end
 }
 
--- cmake
-lspconfig.cmake.setup {
-  capabilities = capabilities
-}
-
 -- lua
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
@@ -67,18 +62,4 @@ lspconfig.lua_ls.setup {
       },
     },
   },
-}
-
--- python
-lspconfig.pylsp.setup {
-  settings = {
-    pylsp = {
-      plugins = {
-        pycodestyle = {
-          ignore = { 'W391' },
-          maxLineLength = 100
-        }
-      }
-    }
-  }
 }
