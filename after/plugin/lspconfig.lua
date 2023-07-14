@@ -63,3 +63,21 @@ lspconfig.lua_ls.setup {
     },
   },
 }
+
+-- python
+lspconfig.pylsp.setup {
+  capabilities = capabilities,
+  settings = {
+    pylsp = {
+      plugins = {
+        jedi_completion = {
+          include_params = true,
+        },
+        pycodestyle = {
+          ignore = { 'W391' },
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}
