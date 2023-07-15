@@ -1,12 +1,16 @@
 # Neovim Config
 
 ## Requirements
-- [clangd](https://clangd.llvm.org/)
+
+### Tools
 - [fd](https://github.com/sharkdp/fd)
-- [lua-language-server](https://github.com/LuaLS/lua-language-server)
-- [python-lsp-server](https://github.com/python-lsp/python-lsp-server)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [treesitter](https://github.com/tree-sitter/tree-sitter)
+
+### Language Servers
+- [clangd](https://clangd.llvm.org/)
+- [lua-language-server](https://github.com/LuaLS/lua-language-server)
+- [python-lsp-server](https://github.com/python-lsp/python-lsp-server)
 
 ## Installation
 
