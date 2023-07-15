@@ -10,7 +10,7 @@ require('telescope').setup {
         ['<esc>'] = actions.close
       }
     },
-    file_ignore_patterns = { '^build/' }
+    file_ignore_patterns = { '^./build/' }
   },
 }
 
