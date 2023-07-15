@@ -75,7 +75,7 @@ lspconfig.pylsp.setup {
         },
         pycodestyle = {
           ignore = { 'W391' },
-          maxLineLength = 100
+          maxLineLength = 80
         }
       }
     }
