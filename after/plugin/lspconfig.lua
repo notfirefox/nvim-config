@@ -42,6 +42,10 @@ lspconfig.clangd.setup {
   end
 }
 
+lspconfig.gopls.setup {
+  capabilities = capabilities,
+}
+
 -- lua
 lspconfig.lua_ls.setup {
   capabilities = capabilities,
