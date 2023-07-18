@@ -9,6 +9,7 @@
 
 ### Language Servers
 - [clangd](https://clangd.llvm.org/)
+- [gopls](https://pkg.go.dev/golang.org/x/tools/gopls)
 - [lua-language-server](https://github.com/LuaLS/lua-language-server)
 - [python-lsp-server](https://github.com/python-lsp/python-lsp-server)
 
