@@ -3,6 +3,7 @@
 ## Requirements
 
 ### Tools
+- [autopep8](https://github.com/hhatto/autopep8)
 - [fd](https://github.com/sharkdp/fd)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - [treesitter](https://github.com/tree-sitter/tree-sitter)
