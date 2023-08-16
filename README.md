@@ -5,11 +5,10 @@
 ### Tools
 - [fd](https://github.com/sharkdp/fd)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- [treesitter](https://github.com/tree-sitter/tree-sitter)
+- [tree-sitter](https://github.com/tree-sitter/tree-sitter)
 
 ### Language Servers
 - [clangd](https://clangd.llvm.org/)
-- [gopls](https://pkg.go.dev/golang.org/x/tools/gopls)
 - [lua-language-server](https://github.com/LuaLS/lua-language-server)
 
 ## Installation
