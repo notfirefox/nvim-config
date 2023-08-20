@@ -9,7 +9,6 @@
 
 ### Language Servers
 - [clangd](https://clangd.llvm.org/)
-- [lua-language-server](https://github.com/LuaLS/lua-language-server)
 
 ## Installation
 
