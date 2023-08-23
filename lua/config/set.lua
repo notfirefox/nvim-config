@@ -21,3 +21,4 @@ vim.opt.wrap = false
 
 -- color column
 vim.opt.colorcolumn = '80'
+vim.cmd("highlight ColorColumn ctermbg=237")
