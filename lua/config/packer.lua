@@ -14,8 +14,8 @@ local packer_bootstrap = ensure_packer()
 
 -- setup packer and plugins
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
   -- basic features
+  use 'wbthomason/packer.nvim'
   use 'windwp/nvim-autopairs'
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'nvim-lua/plenary.nvim' -- required by telescope
