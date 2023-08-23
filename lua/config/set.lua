@@ -1,3 +1,6 @@
+-- color scheme
+vim.cmd("colorscheme retrobox")
+
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
