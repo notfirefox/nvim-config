@@ -9,7 +9,6 @@
 
 ### Language Servers
 - [clangd](https://clangd.llvm.org/)
-- [gopls](https://pkg.go.dev/golang.org/x/tools/gopls)
 
 ## Installation
 
