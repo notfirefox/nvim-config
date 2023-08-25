@@ -41,8 +41,3 @@ lspconfig.clangd.setup {
     end
   end
 }
-
--- go
-lspconfig.gopls.setup{
-  capabilities = capabilities
-}
