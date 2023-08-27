@@ -17,7 +17,7 @@ require('lazy').setup({
   'windwp/nvim-autopairs',
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
   { 
-    'nvim-telescope/telescope.nvim', tag = '0.1.1', 
+    'nvim-telescope/telescope.nvim', version = '0.1.1', 
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
   'neovim/nvim-lspconfig',
