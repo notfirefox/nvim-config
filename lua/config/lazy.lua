@@ -15,9 +15,11 @@ vim.opt.rtp:prepend(lazypath)
 -- setup lazy and plugins
 require('lazy').setup({
   'windwp/nvim-autopairs',
-  { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
-  'nvim-lua/plenary.nvim', -- required by telescope
-  { 'nvim-telescope/telescope.nvim', tag = '0.1.1', },
+  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+  { 
+    'nvim-telescope/telescope.nvim', tag = '0.1.1', 
+    dependencies = { 'nvim-lua/plenary.nvim' }
+  },
   'neovim/nvim-lspconfig',
   'hrsh7th/nvim-cmp',
   'hrsh7th/cmp-nvim-lsp',
