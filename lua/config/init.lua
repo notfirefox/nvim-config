@@ -1,3 +1,3 @@
-require("config.set")
-require("config.remap")
+require("config.autocmds")
+require("config.settings")
 require("config.plugins")
