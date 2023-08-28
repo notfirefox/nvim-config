@@ -1,4 +1,4 @@
--- automatically install lazy
+-- automatically install plugin manager
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -12,7 +12,7 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- setup lazy and plugins
+-- setup plugins
 require('lazy').setup({
   'windwp/nvim-autopairs',
   { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
