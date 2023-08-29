@@ -1,5 +1,13 @@
 -- color scheme
-vim.cmd("colorscheme retrobox")
+if not pcall(vim.cmd, 'colorscheme retrobox') then
+  vim.fn.system({
+    'curl',
+    '--create-dirs',
+    '-o', './colors/retrobox.vim',
+    'https://raw.githubusercontent.com/neovim/neovim/master/runtime/colors/retrobox.vim'
+  })
+  vim.cmd('colorscheme retrobox')
+end
 
 -- line numbers
 vim.opt.number = true
@@ -21,7 +29,7 @@ vim.opt.wrap = false
 
 -- color column
 vim.opt.colorcolumn = '80'
-vim.cmd("highlight ColorColumn ctermbg=237")
+vim.cmd('highlight ColorColumn ctermbg=237')
 
 -- restore cursor position
 vim.api.nvim_create_autocmd('BufReadPost', {
