@@ -1,5 +1,5 @@
 return {
-  -- TODO: Improve plugin configuration
+  -- TODO: Improve cmp configuration
   'hrsh7th/nvim-cmp',
   dependencies = {
     'hrsh7th/cmp-nvim-lsp',

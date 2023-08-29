@@ -1,5 +1,5 @@
 return {
-  -- TODO: Improve snippet embedding
+  -- TODO: Improve snippets configuration
   'L3MON4D3/LuaSnip',
   config = function()
     -- variables
