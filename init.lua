@@ -4,7 +4,8 @@ if not pcall(vim.cmd, 'colorscheme retrobox') then
     'curl',
     '--create-dirs',
     '-o', './colors/retrobox.vim',
-    'https://raw.githubusercontent.com/neovim/neovim/master/runtime/colors/retrobox.vim'
+    'https://raw.githubusercontent.com/' ..
+    'neovim/neovim/master/runtime/colors/retrobox.vim'
   })
   vim.cmd('colorscheme retrobox')
 end
