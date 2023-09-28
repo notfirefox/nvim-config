@@ -51,4 +51,6 @@ vim.g.mapleader = ' '
 
 -- setup plugins
 require('lazy').setup('plugins')
+
+-- set theme
 vim.cmd('colorscheme gruvbox')
