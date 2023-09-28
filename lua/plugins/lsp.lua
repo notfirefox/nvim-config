@@ -49,4 +49,14 @@ return {
       end
     }
   end,
+
+  rust_analyzer.setup {
+    settings = {
+      ['rust-analyzer'] = {
+        diagnostics = {
+          enable = false;
+        }
+      }
+    }
+  }
 }
