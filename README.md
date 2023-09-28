@@ -9,6 +9,7 @@
 
 ### Language Servers
 - [clangd](https://clangd.llvm.org/)
+- [rust-analyzer](https://rust-analyzer.github.io/)
 
 ## Installation
 
