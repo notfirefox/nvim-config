@@ -1,12 +1,5 @@
 return {
   {
-    'ellisonleao/gruvbox.nvim',
-    priority = 1000,
-    opts = {
-      contrast = 'hard',
-    },
-  },
-  {
     'nvim-telescope/telescope.nvim', version = '0.1.1', 
     dependencies = { 'nvim-lua/plenary.nvim' },
     keys = {
