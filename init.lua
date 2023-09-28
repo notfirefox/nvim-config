@@ -1,15 +1,3 @@
--- color scheme
-if not pcall(vim.cmd, 'colorscheme retrobox') then
-  vim.fn.system({
-    'curl',
-    '--create-dirs',
-    '-o', './colors/retrobox.vim',
-    'https://raw.githubusercontent.com/' ..
-    'neovim/neovim/master/runtime/colors/retrobox.vim'
-  })
-  vim.cmd('colorscheme retrobox')
-end
-
 -- line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -63,3 +51,4 @@ vim.g.mapleader = ' '
 
 -- setup plugins
 require('lazy').setup('plugins')
+vim.cmd('colorscheme gruvbox')
