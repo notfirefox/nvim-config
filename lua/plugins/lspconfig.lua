@@ -19,6 +19,17 @@ return {
             signs = false
         })
 
+        --clangd fix item function
+        local function fixItem(item)
+            if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
+                local index = item.textEdit.newText:find('{\n\t')
+                if index == nil then
+                    local newText = item.textEdit.newText:gsub('{\n', '{\n\t')
+                    item.textEdit.newText = newText
+                end
+            end
+        end
+
         -- clangd
         lspconfig.clangd.setup {
             capabilities = capabilities,
@@ -32,13 +43,7 @@ return {
                             if not err and result then
                                 local items = result.items or result
                                 for _, item in ipairs(items) do
-                                    if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
-                                        local index = item.textEdit.newText:find('{\n\t')
-                                        if index == nil then
-                                            local newText = item.textEdit.newText:gsub('{\n', '{\n\t')
-                                            item.textEdit.newText = newText
-                                        end
-                                    end
+                                    fixItem(item)
                                 end
                             end
                             return orig_handler(...)
