@@ -1,6 +1,6 @@
 return {
-  {
-    'windwp/nvim-autopairs',
-    config = true,
-  }
+	{
+		'windwp/nvim-autopairs',
+		config = true,
+	}
 }
