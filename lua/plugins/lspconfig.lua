@@ -19,7 +19,7 @@ return {
             signs = false
         })
 
-        --clangd fix item function
+        -- clangd fix item function
         local function fixItem(item)
             if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
                 local index = item.textEdit.newText:find('{\n\t')
