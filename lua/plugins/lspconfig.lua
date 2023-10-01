@@ -14,6 +14,15 @@ return {
             end
         })
 
+        -- set lsp bindings
+        vim.api.nvim_create_autocmd('LspAttach', {
+          group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+          callback = function(ev)
+            vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
+            vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+          end,
+        })
+
         -- disable diagnostic signs
         vim.diagnostic.config({
             signs = false
