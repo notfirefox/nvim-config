@@ -12,6 +12,10 @@
 - [rust-analyzer](https://rust-analyzer.github.io/)
 
 ## Installation
+Install the required packages.
+```sh
+sudo dnf install neovim fd-find ripgrep tree-sitter-cli libtree-sitter
+```
 
 Clone the repository into your your nvim config folder.
 ```sh
