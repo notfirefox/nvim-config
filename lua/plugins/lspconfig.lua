@@ -4,10 +4,10 @@ return {
     config = function()
         -- variables
         local lspconfig = require('lspconfig')
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
+        local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         -- auto format on save
-        vim.api.nvim_create_autocmd("BufWritePre", {
+        vim.api.nvim_create_autocmd('BufWritePre', {
             group = vim.api.nvim_create_augroup('format_code', {}),
             callback = function()
                 vim.lsp.buf.format { async = false }
