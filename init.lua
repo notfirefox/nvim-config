@@ -18,7 +18,7 @@ vim.opt.wrap = false
 
 -- visualize tabs
 vim.opt.list = true
-vim.opt.listchars = { tab = '>-' }
+vim.opt.listchars = 'tab:>-'
 
 -- color column
 vim.opt.colorcolumn = '80'
