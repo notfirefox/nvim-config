@@ -1,4 +1,5 @@
 # Neovim Config
+Neovim Config for C, C++ and Rust
 
 ## Installation
 Install the required packages.
