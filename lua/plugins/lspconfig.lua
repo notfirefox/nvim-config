@@ -29,34 +29,32 @@ return {
             signs = false
         })
 
-        -- fix clangd item
-        local function clangd_fix_item(item)
-            if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
-                local new_text = item.textEdit.newText:gsub('{\n', '{\n\t')
-                item.textEdit.newText = new_text
-            end
-        end
-
         -- clangd
         lspconfig.clangd.setup {
             capabilities = capabilities,
             on_init = function(client)
                 local orig_rpc_request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
-                    local orig_handler = handler
-                    if method == 'textDocument/completion' then
-                        handler = function(...)
-                            local err, result = ...
-                            if not err and result then
-                                local items = result.items or result
-                                for _, item in ipairs(items) do
-                                    clangd_fix_item(item)
-                                end
-                            end
-                            return orig_handler(...)
-                        end
+                    if method ~= 'textDocument/completion' then
+                        return orig_rpc_request(method, params, handler, ...)
                     end
-                    return orig_rpc_request(method, params, handler, ...)
+                    new_handler = function(...)
+                        local err, result = ...
+                        if err or not result then
+                            return handler(...)
+                        end
+                        local items = result.items or result
+                        for _, item in ipairs(items) do
+                            local kind = vim.lsp.protocol.CompletionItemKind
+                            if item.kind == kind.Snippet then
+                                local text = item.textEdit.newText
+                                text = text:gsub('{\n', '{\n\t')
+                                item.textEdit.newText = text
+                            end
+                        end
+                        return handler(...)
+                    end
+                    return orig_rpc_request(method, params, new_handler, ...)
                 end
             end
         }
