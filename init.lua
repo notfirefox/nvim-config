@@ -22,7 +22,7 @@ vim.opt.listchars = 'tab:>-'
 
 -- color column
 vim.opt.colorcolumn = '80'
-vim.cmd('highlight ColorColumn ctermbg=237')
+vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 237 })
 
 -- restore cursor position
 vim.api.nvim_create_autocmd('BufReadPost', {
