@@ -32,18 +32,15 @@ return {
         -- fix clangd item
         local function clangd_fix_item(item)
             if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
-                local index = item.textEdit.newText:find('{\n\t')
-                if index == nil then
-                    local newText = item.textEdit.newText:gsub('{\n', '{\n\t')
-                    item.textEdit.newText = newText
-                end
+                local new_text = item.textEdit.newText:gsub('{\n', '{\n\t')
+                item.textEdit.newText = new_text
             end
         end
 
         -- clangd
         lspconfig.clangd.setup {
             capabilities = capabilities,
-            on_attach = function(client)
+            on_init = function(client)
                 local orig_rpc_request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
                     local orig_handler = handler
