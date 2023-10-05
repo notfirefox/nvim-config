@@ -18,6 +18,7 @@ return {
         vim.api.nvim_create_autocmd('LspAttach', {
           group = vim.api.nvim_create_augroup('lsp_attach', {}),
           callback = function(ev)
+            local opts = { buffer = ev.buf }
             vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
             vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
           end,
