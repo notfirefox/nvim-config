@@ -3,7 +3,7 @@
 ## Installation
 Install the required packages.
 ```sh
-dnf install neovim fd-find ripgrep tree-sitter-cli libtree-sitter
+dnf install neovim fd-find ripgrep
 ```
 
 You may also want to install the corresponding LSP servers.
