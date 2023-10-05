@@ -29,7 +29,7 @@ return {
         })
 
         -- clangd fix item function
-        local function fixItem(item)
+        local function clangd_fix_item(item)
             if item.kind == vim.lsp.protocol.CompletionItemKind.Snippet then
                 local index = item.textEdit.newText:find('{\n\t')
                 if index == nil then
@@ -52,7 +52,7 @@ return {
                             if not err and result then
                                 local items = result.items or result
                                 for _, item in ipairs(items) do
-                                    fixItem(item)
+                                    clangd_fix_item(item)
                                 end
                             end
                             return orig_handler(...)
