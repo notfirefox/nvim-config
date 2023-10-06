@@ -60,36 +60,6 @@ return {
             end
         }
 
-        -- luals
-        lspconfig.lua_ls.setup {
-            on_init = function(client)
-                local path = client.workspace_folders[1].name
-                if vim.loop.fs_stat(path .. '/.luarc.json') then
-                    return true
-                end
-                if vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                    return true
-                end
-                client.config.settings = vim.tbl_deep_extend('force',
-                    client.config.settings, {
-                        Lua = {
-                            runtime = {
-                                version = 'LuaJIT'
-                            },
-                            workspace = {
-                                checkThirdParty = false,
-                                library = {
-                                    vim.env.VIMRUNTIME
-                                }
-                            }
-                        }
-                    })
-                local notify = 'workspace/didChangeConfiguration'
-                client.notify(notify, { settings = client.config.settings })
-                return true
-            end
-        }
-
         -- rust analyzer
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
