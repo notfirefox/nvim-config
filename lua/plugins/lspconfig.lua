@@ -34,10 +34,10 @@ return {
         lspconfig.clangd.setup {
             capabilities = capabilities,
             on_init = function(client)
-                local orig_rpc_request = client.rpc.request
+                local request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
                     if method ~= 'textDocument/completion' then
-                        return orig_rpc_request(method, params, handler, ...)
+                        return request(method, params, handler, ...)
                     end
                     new_handler = function(...)
                         local err, result = ...
@@ -55,7 +55,7 @@ return {
                         end
                         return handler(...)
                     end
-                    return orig_rpc_request(method, params, new_handler, ...)
+                    return request(method, params, new_handler, ...)
                 end
             end
         }
