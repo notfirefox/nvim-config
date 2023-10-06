@@ -39,7 +39,7 @@ return {
                     if method ~= 'textDocument/completion' then
                         return request(method, params, handler, ...)
                     end
-                    new_handler = function(...)
+                    local new_handler = function(...)
                         local err, result = ...
                         if err or not result then
                             return handler(...)
@@ -66,11 +66,10 @@ return {
             settings = {
                 ['rust-analyzer'] = {
                     diagnostics = {
-                        enable = false;
+                        enable = false,
                     }
                 }
             }
         }
-
     end,
 }
