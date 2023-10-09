@@ -20,6 +20,9 @@ vim.opt.wrap = false
 vim.opt.list = true
 vim.opt.listchars = 'tab:>-'
 
+-- set leader key
+vim.g.mapleader = ' '
+
 -- color column
 vim.opt.colorcolumn = '80'
 vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 237 })
@@ -49,9 +52,6 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.rtp:prepend(lazypath)
-
--- set leader key
-vim.g.mapleader = ' '
 
 -- setup plugins
 require('lazy').setup('plugins')
