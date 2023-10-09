@@ -20,12 +20,12 @@ vim.opt.wrap = false
 vim.opt.list = true
 vim.opt.listchars = 'tab:>-'
 
--- set leader key
-vim.g.mapleader = ' '
-
 -- color column
 vim.opt.colorcolumn = '80'
 vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 237 })
+
+-- set leader key
+vim.g.mapleader = ' '
 
 -- restore cursor position
 vim.api.nvim_create_autocmd('BufReadPost', {
