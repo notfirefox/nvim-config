@@ -1,5 +1,4 @@
 return {
-    -- TODO: Improve lsp configuration
     'neovim/nvim-lspconfig',
     config = function()
         -- variables
