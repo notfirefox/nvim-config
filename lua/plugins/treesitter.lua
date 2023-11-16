@@ -4,7 +4,7 @@ return {
         build = ':TSUpdate',
         opts = {
             highlight = {
-                enable = true,
+                enable = false,
                 additional_vim_regex_highlighting = false,
             }
         },
