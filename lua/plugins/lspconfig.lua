@@ -19,9 +19,8 @@ return {
             callback = function(ev)
                 local opts = { buffer = ev.buf }
                 local bind = vim.keymap.set
-                bind('n', '<F6>', vim.lsp.buf.rename, opts)
-                bind('n', '<C-B>', vim.lsp.buf.declaration, opts)
-                bind('n', '<A-CR>', vim.lsp.buf.code_action, opts)
+                bind('n', '<leader>rn', vim.lsp.buf.rename, opts)
+                bind('n', '<leader>ca', vim.lsp.buf.code_action, opts)
             end,
         })
 
