@@ -5,17 +5,23 @@ return {
         dependencies = { 'nvim-lua/plenary.nvim' },
         keys = {
             {
+                '<leader>e',
+                function()
+                    require('telescope.builtin').buffers()
+                end,
+            },
+            {
                 '<leader>f',
                 function()
                     require('telescope.builtin').find_files()
                 end,
             },
             {
-                '<leader>e',
+                '<leader>g',
                 function()
-                    require('telescope.builtin').buffers()
+                    require('telescope.builtin').live_grep()
                 end,
-            }
+            },
         },
         opts = {
             defaults = {
