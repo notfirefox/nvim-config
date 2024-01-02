@@ -59,6 +59,9 @@ return {
             end
         }
 
+        -- haskell
+        lspconfig.hls.setup {}
+
         -- rust analyzer
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
