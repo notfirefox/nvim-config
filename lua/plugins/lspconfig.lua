@@ -60,7 +60,13 @@ return {
         }
 
         -- haskell
-        lspconfig.hls.setup {}
+        lspconfig.hls.setup {
+            settings = {
+                haskell = {
+                    formattingProvider = "fourmolu"
+                }
+            }
+        }
 
         -- rust analyzer
         lspconfig.rust_analyzer.setup {
