@@ -73,8 +73,11 @@ return {
             capabilities = capabilities,
             settings = {
                 ['rust-analyzer'] = {
+                    check = {
+                        command = "clippy"
+                    },
                     diagnostics = {
-                        enable = false,
+                        enable = false
                     }
                 }
             }
