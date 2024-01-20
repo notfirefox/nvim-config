@@ -32,6 +32,10 @@ return {
         -- clangd
         lspconfig.clangd.setup {
             capabilities = capabilities,
+            cmd = {
+                "clangd",
+                "--fallback-style=webkit"
+            },
             on_init = function(client)
                 local request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
@@ -56,7 +60,7 @@ return {
                     end
                     return request(method, params, new_handler, ...)
                 end
-            end
+            end,
         }
 
         -- haskell
