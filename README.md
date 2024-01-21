@@ -1,5 +1,5 @@
 # Neovim Config
-Neovim Config for C, C++, Haskell and Rust
+Neovim Config for Haskell and Rust
 
 ## Installation
 Enable the Haskell language server repository.
@@ -8,7 +8,7 @@ dnf copr enable petersen/haskell-language-server
 ```
 Install the required packages.
 ```sh
-dnf install neovim fd-find ripgrep clang-tools-extra haskell-language-server clippy rust-analyzer
+dnf install neovim fd-find ripgrep haskell-language-server clippy rust-analyzer
 ```
 
 Clone the repository into your your nvim config folder.
