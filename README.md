@@ -8,7 +8,12 @@ dnf copr enable petersen/haskell-language-server
 ```
 Install the required packages.
 ```sh
-dnf install neovim fd-find ripgrep haskell-language-server clippy rust-analyzer
+dnf install neovim \
+            fd-find \
+            ripgrep \
+            haskell-language-server \
+            clippy rust-analyzer \
+            rustfmt
 ```
 
 Clone the repository into your your nvim config folder.
