@@ -15,6 +15,7 @@ Install the required packages.
 dnf install neovim \
             fd-find \
             ripgrep \
+            nodejs-bash-language-server \
             haskell-language-server \
             clippy rust-analyzer \
             rustfmt
