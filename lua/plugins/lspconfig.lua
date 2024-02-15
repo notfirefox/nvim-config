@@ -29,6 +29,9 @@ return {
             signs = false
         })
 
+        -- bash
+        lspconfig.bashls.setup {}
+
         -- haskell
         lspconfig.hls.setup {
             capabilities = capabilities,
