@@ -32,6 +32,37 @@ return {
         -- bash
         lspconfig.bashls.setup {}
 
+        -- clangd
+        lspconfig.clangd.setup {
+            capabilities = capabilities,
+            on_init = function(client)
+                local request = client.rpc.request
+                function client.rpc.request(method, params, handler, ...)
+                    if method ~= 'textDocument/completion' then
+                        return request(method, params, handler, ...)
+                    end
+                    local new_handler = function(...)
+                        local err, result = ...
+                        if err or not result then
+                            return handler(...)
+                        end
+                        local items = result.items or result
+                        for _, item in ipairs(items) do
+                            local kind = vim.lsp.protocol.CompletionItemKind
+                            if item.kind == kind.Snippet then
+                                local text = item.textEdit.newText
+                                text = text:gsub('{\n', '{\n\t')
+                                item.textEdit.newText = text
+                            end
+                        end
+                        return handler(...)
+                    end
+                    return request(method, params, new_handler, ...)
+                end
+            end,
+        }
+
+
         -- haskell
         lspconfig.hls.setup {
             capabilities = capabilities,
@@ -44,10 +75,17 @@ return {
 
         -- lua
         lspconfig.lua_ls.setup {
+            capabilities = capabilities,
             on_init = function(client)
                 local path = client.workspace_folders[1].name
-                if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                    client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+                if vim.loop.fs_stat(path .. '/.luarc.json') or
+                    vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                    return true
+                end
+                client.config.settings = vim.tbl_deep_extend(
+                    'force',
+                    client.config.settings,
+                    {
                         Lua = {
                             runtime = {
                                 version = 'LuaJIT'
@@ -60,9 +98,8 @@ return {
                             }
                         }
                     })
-
-                    client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-                end
+                client.notify("workspace/didChangeConfiguration",
+                    { settings = client.config.settings })
                 return true
             end
         }
