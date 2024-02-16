@@ -12,30 +12,8 @@ Neovim Config for various programming languages.
 ## Installation
 
 > [!IMPORTANT]
-> This section only covers the installation process for Fedora Linux.
-
-Enable the Haskell language server repository.
-```sh
-dnf copr enable petersen/haskell-language-server
-```
-
-Enable the Lua language server repository.
-```sh
-dnf copr enable yorickpeterse/lua-language-server
-```
-
-Install the required packages.
-```sh
-dnf install neovim \
-            fd-find \
-            ripgrep \
-            clang-tools-extra \
-            nodejs-bash-language-server \
-            haskell-language-server \
-            lua-language-server \
-            clippy rust-analyzer \
-            rustfmt
-```
+> It is recommended to make use of this 
+> [development container](https://github.com/notfirefox/dev-container).
 
 Clone the repository into your your nvim config folder.
 ```sh
