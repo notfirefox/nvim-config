@@ -11,7 +11,7 @@ Neovim Config for various programming languages.
 
 ## Installation
 
-> [!IMPORTANT]
+> [!NOTE]
 > It is recommended to make use of this 
 > [development container](https://github.com/notfirefox/dev-container).
 
