@@ -1,5 +1,11 @@
 # Neovim Config
-Neovim Config for Haskell and Rust
+Neovim Config for various programming languages.
+
+## Supported Languages
+- Bash
+- Haskell
+- Lua
+- Rust
 
 ## Installation
 
@@ -10,6 +16,12 @@ Enable the Haskell language server repository.
 ```sh
 dnf copr enable petersen/haskell-language-server
 ```
+
+Enable the Lua language server repository.
+```sh
+dnf copr enable yorickpeterse/lua-language-server
+```
+
 Install the required packages.
 ```sh
 dnf install neovim \
@@ -17,6 +29,7 @@ dnf install neovim \
             ripgrep \
             nodejs-bash-language-server \
             haskell-language-server \
+            lua-language-server \
             clippy rust-analyzer \
             rustfmt
 ```
