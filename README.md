@@ -2,6 +2,8 @@
 Neovim Config for various programming languages.
 
 ## Supported Languages
+- C
+- C++
 - Bash
 - Haskell
 - Lua
@@ -27,6 +29,7 @@ Install the required packages.
 dnf install neovim \
             fd-find \
             ripgrep \
+            clang-tools-extra \
             nodejs-bash-language-server \
             haskell-language-server \
             lua-language-server \
