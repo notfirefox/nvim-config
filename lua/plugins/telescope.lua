@@ -13,7 +13,7 @@ return {
             {
                 "<leader>f",
                 function()
-                    require("telescope.builtin").find_files()
+                    require("telescope.builtin").find_files({ hidden = true })
                 end,
             },
             {
@@ -30,7 +30,7 @@ return {
                         ["<esc>"] = "close"
                     }
                 },
-                file_ignore_patterns = { "build/" }
+                file_ignore_patterns = { "build/", ".git/" }
             }
         }
     },
