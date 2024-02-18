@@ -1,26 +1,26 @@
 return {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     config = function()
         -- variables
-        local lspconfig = require('lspconfig')
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+        local lspconfig = require("lspconfig")
+        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
         -- auto format on save
-        vim.api.nvim_create_autocmd('BufWritePre', {
-            group = vim.api.nvim_create_augroup('format_code', {}),
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("format_code", {}),
             callback = function()
                 vim.lsp.buf.format { async = false }
             end
         })
 
         -- set lsp bindings
-        vim.api.nvim_create_autocmd('LspAttach', {
-            group = vim.api.nvim_create_augroup('lsp_attach', {}),
+        vim.api.nvim_create_autocmd("LspAttach", {
+            group = vim.api.nvim_create_augroup("lsp_attach", {}),
             callback = function(ev)
                 local opts = { buffer = ev.buf }
                 local bind = vim.keymap.set
-                bind('n', '<leader>rn', vim.lsp.buf.rename, opts)
-                bind('n', '<leader>ca', vim.lsp.buf.code_action, opts)
+                bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
+                bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
             end,
         })
 
@@ -38,7 +38,7 @@ return {
             on_init = function(client)
                 local request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
-                    if method ~= 'textDocument/completion' then
+                    if method ~= "textDocument/completion" then
                         return request(method, params, handler, ...)
                     end
                     local new_handler = function(...)
@@ -51,7 +51,7 @@ return {
                             local kind = vim.lsp.protocol.CompletionItemKind
                             if item.kind == kind.Snippet then
                                 local text = item.textEdit.newText
-                                text = text:gsub('{\n', '{\n\t')
+                                text = text:gsub("{\n", "{\n\t")
                                 item.textEdit.newText = text
                             end
                         end
@@ -78,17 +78,17 @@ return {
             capabilities = capabilities,
             on_init = function(client)
                 local path = client.workspace_folders[1].name
-                if vim.loop.fs_stat(path .. '/.luarc.json') or
-                    vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                if vim.loop.fs_stat(path .. "/.luarc.json") or
+                    vim.loop.fs_stat(path .. "/.luarc.jsonc") then
                     return true
                 end
                 client.config.settings = vim.tbl_deep_extend(
-                    'force',
+                    "force",
                     client.config.settings,
                     {
                         Lua = {
                             runtime = {
-                                version = 'LuaJIT'
+                                version = "LuaJIT"
                             },
                             workspace = {
                                 checkThirdParty = false,
@@ -108,7 +108,7 @@ return {
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
             settings = {
-                ['rust-analyzer'] = {
+                ["rust-analyzer"] = {
                     check = {
                         command = "clippy"
                     },

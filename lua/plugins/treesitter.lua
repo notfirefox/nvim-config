@@ -1,7 +1,7 @@
 return {
     {
-        'nvim-treesitter/nvim-treesitter',
-        build = ':TSUpdate',
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
         opts = {
             highlight = {
                 enable = true,
@@ -9,7 +9,7 @@ return {
             }
         },
         config = function(_, opts)
-            require('nvim-treesitter.configs').setup(opts)
+            require("nvim-treesitter.configs").setup(opts)
         end,
     },
 }

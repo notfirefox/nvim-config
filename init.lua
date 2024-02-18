@@ -10,7 +10,7 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- undo settings
-vim.opt.undodir = vim.fn.expand('~/.vim/undodir')
+vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.opt.undofile = true
 
 -- no wrapping
@@ -18,20 +18,20 @@ vim.opt.wrap = false
 
 -- visualize tabs
 vim.opt.list = true
-vim.opt.listchars = 'tab:>-'
+vim.opt.listchars = "tab:>-"
 
 -- color column
-vim.opt.colorcolumn = '80'
-vim.api.nvim_set_hl(0, 'ColorColumn', { ctermbg = 237 })
+vim.opt.colorcolumn = "80"
+vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 237 })
 
 -- set leader key
-vim.g.mapleader = ' '
+vim.g.mapleader = " "
 
 -- restore cursor position
-vim.api.nvim_create_autocmd('BufReadPost', {
-    group = vim.api.nvim_create_augroup('last_loc', { clear = true }),
+vim.api.nvim_create_autocmd("BufReadPost", {
+    group = vim.api.nvim_create_augroup("last_loc", { clear = true }),
     callback = function()
-        local mark = vim.api.nvim_buf_get_mark(0, '"')
+        local mark = vim.api.nvim_buf_get_mark(0, "\"")
         local lcount = vim.api.nvim_buf_line_count(0)
         if mark[1] > 0 and mark[1] <= lcount then
             pcall(vim.api.nvim_win_set_cursor, 0, mark)
@@ -40,18 +40,18 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 })
 
 -- install plugin manager
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable',
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable",
         lazypath,
     })
 end
 vim.opt.rtp:prepend(lazypath)
 
 -- setup plugins
-require('lazy').setup('plugins')
+require("lazy").setup("plugins")

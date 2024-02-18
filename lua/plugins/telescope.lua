@@ -1,25 +1,25 @@
 return {
     {
-        'nvim-telescope/telescope.nvim',
-        version = '0.1.4',
-        dependencies = { 'nvim-lua/plenary.nvim' },
+        "nvim-telescope/telescope.nvim",
+        version = "0.1.4",
+        dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             {
-                '<leader>e',
+                "<leader>e",
                 function()
-                    require('telescope.builtin').buffers()
+                    require("telescope.builtin").buffers()
                 end,
             },
             {
-                '<leader>f',
+                "<leader>f",
                 function()
-                    require('telescope.builtin').find_files()
+                    require("telescope.builtin").find_files()
                 end,
             },
             {
-                '<leader>g',
+                "<leader>g",
                 function()
-                    require('telescope.builtin').live_grep()
+                    require("telescope.builtin").live_grep()
                 end,
             },
         },
@@ -27,10 +27,10 @@ return {
             defaults = {
                 mappings = {
                     i = {
-                        ['<esc>'] = 'close'
+                        ["<esc>"] = "close"
                     }
                 },
-                file_ignore_patterns = { 'build/' }
+                file_ignore_patterns = { "build/" }
             }
         }
     },
