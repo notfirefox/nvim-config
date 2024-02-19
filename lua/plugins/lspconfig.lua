@@ -30,7 +30,9 @@ return {
         })
 
         -- bash
-        lspconfig.bashls.setup {}
+        lspconfig.bashls.setup {
+            capabilities = capabilities,
+        }
 
         -- clangd
         lspconfig.clangd.setup {
@@ -62,6 +64,10 @@ return {
             end,
         }
 
+        -- go
+        lspconfig.gopls.setup {
+            capabilities = capabilities,
+        }
 
         -- haskell
         lspconfig.hls.setup {
