@@ -62,6 +62,10 @@ return {
             end,
         }
 
+        -- go
+        lspconfig.gopls.setup {
+            capabilities = capabilities,
+        }
 
         -- haskell
         lspconfig.hls.setup {
