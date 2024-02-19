@@ -30,7 +30,9 @@ return {
         })
 
         -- bash
-        lspconfig.bashls.setup {}
+        lspconfig.bashls.setup {
+            capabilities = capabilities,
+        }
 
         -- clangd
         lspconfig.clangd.setup {
