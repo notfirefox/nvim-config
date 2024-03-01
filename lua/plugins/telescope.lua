@@ -30,7 +30,7 @@ return {
                         ["<esc>"] = "close"
                     }
                 },
-                file_ignore_patterns = { "build/", ".git/" }
+                file_ignore_patterns = { ".git/" }
             }
         }
     },
