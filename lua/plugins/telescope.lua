@@ -5,6 +5,12 @@ return {
         dependencies = { "nvim-lua/plenary.nvim" },
         keys = {
             {
+                "<leader>b",
+                function()
+                    require("telescope.builtin").git_branches()
+                end,
+            },
+            {
                 "<leader>e",
                 function()
                     require("telescope.builtin").buffers()
