@@ -11,7 +11,7 @@ return {
             {
                 "<leader>gp",
                 function()
-                    vim.cmd.Git("push")
+                    vim.cmd.Git("-c push.default=current push")
                 end
             },
             {
