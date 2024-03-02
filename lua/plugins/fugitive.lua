@@ -4,19 +4,19 @@ return {
         lazy = false,
         keys = {
             {
-                "<leader>gc",
+                "<leader>C",
                 function()
                     vim.cmd.Git("commit")
                 end
             },
             {
-                "<leader>gp",
+                "<leader>p",
                 function()
                     vim.cmd.Git("-c push.default=current push")
                 end
             },
             {
-                "<leader>gP",
+                "<leader>P",
                 function()
                     vim.cmd.Git("pull")
                 end
