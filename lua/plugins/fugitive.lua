@@ -14,6 +14,11 @@ return {
                 function()
                     vim.cmd.Git("pull")
                 end
+            {
+                "<leader>s",
+                function()
+                    vim.cmd("0Git")
+                end
             }
         }
     }
