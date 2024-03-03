@@ -4,12 +4,6 @@ return {
         lazy = false,
         keys = {
             {
-                "<leader>C",
-                function()
-                    vim.cmd.Git("commit")
-                end
-            },
-            {
                 "<leader>p",
                 function()
                     vim.cmd.Git("-c push.default=current push")
