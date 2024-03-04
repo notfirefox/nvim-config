@@ -28,7 +28,7 @@ return {
             {
                 "<leader>l",
                 function()
-                    vim.cmd.Git("log")
+                    vim.cmd("0Git log")
                 end
             },
         }
