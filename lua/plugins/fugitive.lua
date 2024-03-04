@@ -23,7 +23,14 @@ return {
                 function()
                     vim.cmd("0Git")
                 end
-            }
+            },
+            -- logging
+            {
+                "<leader>l",
+                function()
+                    vim.cmd.Git("log")
+                end
+            },
         }
     }
 }
