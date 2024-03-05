@@ -10,6 +10,12 @@ return {
                     vim.cmd.Git("-c push.default=current push")
                 end
             },
+            {
+                "<leader>F",
+                function()
+                    vim.cmd.Git("push --force")
+                end
+            },
             -- pulling
             {
                 "<leader>P",
