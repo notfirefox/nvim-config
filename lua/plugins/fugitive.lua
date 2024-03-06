@@ -13,7 +13,7 @@ return {
             {
                 "<leader>F",
                 function()
-                    vim.cmd.Git("push --force")
+                    vim.cmd.Git("-c push.default=current push --force")
                 end
             },
             -- pulling
