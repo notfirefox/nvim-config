@@ -24,8 +24,6 @@ vim.opt.listchars = "tab:>-"
 vim.opt.colorcolumn = "80"
 vim.api.nvim_set_hl(0, "ColorColumn", { ctermbg = 237 })
 
--- no show mode
-vim.opt.showmode = false
 
 -- set leader key
 vim.g.mapleader = " "
