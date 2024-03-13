@@ -39,12 +39,12 @@ return {
             },
         },
         config = function(_)
-            function CustomStatusLine()
+            local function custom_status_line()
                 local branch = "[" .. vim.fn.FugitiveHead() .. "]"
                 return branch .. " %<%f %h%m%r%=%-14.(%l,%c%V%) %P"
             end
 
-            vim.opt.statusline = CustomStatusLine()
+            vim.opt.statusline = custom_status_line()
         end,
     }
 }
