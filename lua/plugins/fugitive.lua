@@ -39,12 +39,12 @@ return {
             },
         },
         config = function(_)
-            local function custom_status_line()
+            function CustomStatusLine()
                 local branch = "[" .. vim.fn.FugitiveHead() .. "]"
                 return branch .. " %<%f %h%m%r%=%-14.(%l,%c%V%) %P"
             end
 
-            vim.opt.statusline = custom_status_line()
+            vim.opt.statusline = "%!luaeval('CustomStatusLine()')"
         end,
     }
 }
