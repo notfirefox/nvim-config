@@ -3,34 +3,35 @@ return {
         "tpope/vim-fugitive",
         lazy = false,
         keys = {
-            -- pushing
+            -- push to current branch
             {
                 "<leader>p",
                 function()
                     vim.cmd.Git("-c push.default=current push")
                 end
             },
+            -- force push to current branch
             {
                 "<leader>F",
                 function()
                     vim.cmd.Git("-c push.default=current push --force")
                 end
             },
-            -- pulling
+            -- pull
             {
                 "<leader>P",
                 function()
                     vim.cmd.Git("pull")
                 end
             },
-            -- staging
+            -- stage and status
             {
                 "<leader>s",
                 function()
                     vim.cmd("0Git")
                 end
             },
-            -- logging
+            -- commit log
             {
                 "<leader>l",
                 function()
