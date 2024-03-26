@@ -119,5 +119,19 @@ return {
                 }
             }
         }
+
+        -- set filetype for slint files
+        vim.api.nvim_create_autocmd("BufEnter", {
+            pattern = "*.slint",
+            callback = function()
+                local buf = vim.api.nvim_get_current_buf()
+                vim.api.nvim_buf_set_option(buf, "filetype", "slint")
+            end
+        })
+
+        -- slint
+        lspconfig.slint_lsp.setup {
+            capabilities = capabilities,
+        }
     end,
 }
