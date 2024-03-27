@@ -21,7 +21,7 @@ return {
             {
                 "<leader>P",
                 function()
-                    vim.cmd.Git("pull")
+                    vim.cmd.Git("pull --rebase")
                 end
             },
             -- stage and status
