@@ -21,7 +21,7 @@ return {
             {
                 "<leader>P",
                 function()
-                    vim.cmd.Git("pull --rebase")
+                    vim.cmd.Git("pull --autostash --rebase --prune")
                 end
             },
             -- stage and status
