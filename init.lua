@@ -42,7 +42,8 @@ vim.api.nvim_create_autocmd("BufReadPost", {
 -- add custom filetypes
 vim.filetype.add({
     extension = {
-        slint = "slint"
+        qml = "qml",
+        qrc = "xml",
     }
 })
 
