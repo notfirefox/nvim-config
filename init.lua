@@ -39,14 +39,6 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
--- add custom filetypes
-vim.filetype.add({
-    extension = {
-        qml = "qml",
-        qrc = "xml",
-    }
-})
-
 -- install plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
