@@ -106,11 +106,6 @@ return {
             end
         }
 
-        -- qml
-        lspconfig.qmlls.setup {
-            capabilities = capabilities,
-        }
-
         -- rust
         lspconfig.rust_analyzer.setup {
             capabilities = capabilities,
