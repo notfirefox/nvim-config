@@ -1,5 +1,5 @@
 # Neovim Config
-Neovim Config for various programming languages.
+Simple Neovim Config
 
 ![C](https://img.shields.io/badge/c-%2300599C.svg?style=for-the-badge&logo=c&logoColor=white)
 ![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=for-the-badge&logo=c%2B%2B&logoColor=white)
@@ -9,12 +9,7 @@ Neovim Config for various programming languages.
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ## Installation
-
-> [!NOTE]
-> It is recommended to make use of this 
-> [development container](https://github.com/notfirefox/dev-container).
-
-Clone the repository into your your nvim config folder.
+Clone the repository into `~/.config/nvim`.
 ```sh
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 ```
