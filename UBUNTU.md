@@ -21,27 +21,25 @@ sudo apt-get install neovim
 > This section needs to be expanded to contain installation instructions for Ubuntu.
 
 ### General
-- fd-find
-- ripgrep
-- treesitter
+`fd-find`, `ripgrep` and `treesitter` are required for this Neovim config.
 
 ### Bash
-- bash-language-server
-- shellcheck
+For Bash support, `bash-language-server` and `shellcheck` are required.
 
 ### C/C++
-- clangd
+Install the `clangd` language server.
+```sh
+sudo apt install clangd
+```
 
 ### Haskell
-- haskell-language-server
+For Haskell support, `haskell-language-server` is required.
 
 ### Lua
-- lua-language-server
+For Lua support, `lua-language-server` is required.
  
 ### Rust
-- clippy
-- rust-analyzer
-- rustfmt
+For Rust support, `rust-analyzer` and `rustfmt` are required. Additionally `clippy` is recommended.
 
 ## Clone Config
 
