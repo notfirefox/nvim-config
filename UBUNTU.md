@@ -17,35 +17,30 @@ sudo apt-get install neovim
 ```
 
 ## Install Tools
-> [!NOTE]  
-> This section needs to be expanded to contain installation instructions for Ubuntu.
+Usually a lot of other tools would be required for this config to function properly.
+In the guide however we will only cover what is strictly needed for autocompletion in C/C++.
 
-### General
-`fd-find`, `ripgrep` and `treesitter` are required for this Neovim config.
-
-### Bash
-For Bash support, `bash-language-server` and `shellcheck` are required.
-
-### C/C++
-Install the `clangd` language server.
+For C/C++ language support, we need to install the `clangd` language server.
 ```sh
 sudo apt install clangd
 ```
-
-### Haskell
-For Haskell support, `haskell-language-server` is required.
-
-### Lua
-For Lua support, `lua-language-server` is required.
- 
-### Rust
-For Rust support, `rust-analyzer` and `rustfmt` are required. Additionally `clippy` is recommended.
 
 ## Clone Config
 
 Clone the Neovim config into `~/.config/nvim`.
 ```sh
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
+```
+
+## Disable Features
+Some features that are not strictly necessary for basic autocompletion may require additional
+software, that was not covered in the [Install Tools](https://github.com/notfirefox/nvim-config/blob/main/UBUNTU.md#install-tools) section.
+
+Run the following commands in order to remove some plugins that are not necessary.
+```sh
+rm ~/.config/nvim/lua/plugins/fugitive.lua
+rm ~/.config/nvim/lua/plugins/telescope.lua
+rm ~/.config/nvim/lua/plugins/treesitter.lua
 ```
 
 ## Sources 
