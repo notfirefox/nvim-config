@@ -1,4 +1,6 @@
 # Ubuntu
+This guide describes how to setup this Neovim config on Ubuntu for basic C/C++ support.
+
 > [!IMPORTANT]  
 > This guide requires Ubuntu 24.04 or newer.
 
@@ -42,6 +44,10 @@ rm ~/.config/nvim/lua/plugins/fugitive.lua
 rm ~/.config/nvim/lua/plugins/telescope.lua
 rm ~/.config/nvim/lua/plugins/treesitter.lua
 ```
+
+## Fix Formatting
+> [!NOTE]  
+> This section needs to be expanded to contain instructions on how to fix clangd formatting.
 
 ## Sources 
 - https://github.com/neovim/neovim/blob/master/INSTALL.md#ubuntu
