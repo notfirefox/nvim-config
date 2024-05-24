@@ -46,8 +46,10 @@ rm ~/.config/nvim/lua/plugins/treesitter.lua
 ```
 
 ## Fix Formatting
-> [!NOTE]  
-> This section needs to be expanded to contain instructions on how to fix clangd formatting.
+`clang-format` by default assumes that we want to use 2 spaces for indentation, whereas my config is designed for 4 spaces. Thererfore we need to override the default `clang` format.
+```sh
+echo -e "---\nBasedOnStyle: LLVM\nIndentWidth: 4\n" > ~/.clang-format
+```
 
 ## Sources 
 - https://github.com/neovim/neovim/blob/master/INSTALL.md#ubuntu
