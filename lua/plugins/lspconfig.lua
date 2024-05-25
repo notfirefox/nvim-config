@@ -82,28 +82,25 @@ return {
                 local path = client.workspace_folders[1].name
                 if vim.loop.fs_stat(path .. "/.luarc.json") or
                     vim.loop.fs_stat(path .. "/.luarc.jsonc") then
-                    return true
+                    return
                 end
-                client.config.settings = vim.tbl_deep_extend(
+                client.config.settings.Lua = vim.tbl_deep_extend(
                     "force",
-                    client.config.settings,
-                    {
-                        Lua = {
-                            runtime = {
-                                version = "LuaJIT"
-                            },
-                            workspace = {
-                                checkThirdParty = false,
-                                library = {
-                                    vim.env.VIMRUNTIME
-                                }
+                    client.config.settings.Lua, {
+                        runtime = {
+                            version = "LuaJIT"
+                        },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                vim.env.VIMRUNTIME
                             }
                         }
                     })
-                client.notify("workspace/didChangeConfiguration",
-                    { settings = client.config.settings })
-                return true
-            end
+            end,
+            settings = {
+                Lua = {}
+            }
         }
 
         -- rust
