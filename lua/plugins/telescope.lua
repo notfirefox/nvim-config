@@ -28,6 +28,12 @@ return {
                     require("telescope.builtin").live_grep()
                 end,
             },
+            {
+                "<leader>h",
+                function()
+                    require("telescope.builtin").help_tags()
+                end,
+            },
         },
         opts = {
             defaults = {
