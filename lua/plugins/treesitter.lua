@@ -7,7 +7,6 @@ return {
                 "bash",
                 "c",
                 "cpp",
-                "haskell",
                 "lua",
                 "markdown",
                 "query",
