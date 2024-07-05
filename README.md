@@ -8,7 +8,17 @@ Simple Neovim Config
 ![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
 ## Installation
+> [!IMPORTANT]  
+> This setup works on any system, where [Brew](https://brew.sh/) can be 
+> installed. Instructions for [Ubuntu](https://ubuntu.com/) 
+> can be found [here](https://github.com/notfirefox/ubuntu-setup).
+
 Clone the repository into `~/.config/nvim`.
 ```sh
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
+```
+
+Install the required tools using [Brew](https://brew.sh/).
+```sh
+brew bundle --file ~/.config/nvim/Brewfile
 ```
