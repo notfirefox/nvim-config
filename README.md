@@ -16,6 +16,8 @@
   <a href="#installation">Installation</a>
     ·
   <a href="#requirements">Requirements</a>
+    ·
+  <a href="https://github.com/notfirefox/nvim-config/wiki">Wiki</a>
 </h4>
 
 ## Features
