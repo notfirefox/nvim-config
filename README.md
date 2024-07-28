@@ -13,18 +13,15 @@
 <h4 align="center">
   <a href="#features">Features</a>
   ·
-  <a href="#requirements">Requirements</a>
-  ·
   <a href="#installation">Installation</a>
+    ·
+  <a href="#requirements">Requirements</a>
 </h4>
 
 ## Features
 - Autocompletion using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - Fuzzy Finder using [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 - Git Integration using [vim-fugitive](https://github.com/tpope/vim-fugitive)
-
-## Requirements 
-Get [Homebrew](https://brew.sh/) to install the latest developer tools.
 
 ## Installation
 Clone the repository into the config directory.
@@ -36,3 +33,6 @@ Use `brew` to install the required dependencies.
 ```sh
 brew bundle --file ~/.config/nvim/Brewfile
 ```
+
+## Requirements 
+Install [Homebrew](https://brew.sh/) to have access to the latest developer tools.
