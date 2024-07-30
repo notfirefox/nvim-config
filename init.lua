@@ -38,6 +38,26 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
+-- load color scheme
+vim.api.nvim_create_autocmd("User", {
+    pattern = "LazyVimStarted",
+    group = vim.api.nvim_create_augroup("load_theme", { clear = true }),
+    callback = function()
+        local theme = vim.g.COLOR_SCHEME
+        if theme ~= nil and theme ~= "" then
+            pcall(vim.cmd.colorscheme, theme)
+        end
+    end,
+})
+
+-- store color scheme
+vim.api.nvim_create_autocmd("ColorScheme", {
+    group = vim.api.nvim_create_augroup("store_theme", { clear = true }),
+    callback = function(params)
+        vim.g.COLOR_SCHEME = params.match
+    end,
+})
+
 -- install plugin manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
