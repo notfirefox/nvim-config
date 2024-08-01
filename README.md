@@ -1,13 +1,13 @@
-<h1 align="center">Neovim Config</h1>
+# Neovim Config
 
-<p align="center"><i>Simple Neovim Config</i></p>
-<p align="center">
-  <a href="https://www.open-std.org/jtc1/sc22/wg14/"><img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white"></a>
-  <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white"></a>
-  <a href="https://www.lua.org/"><img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white"></a>
-  <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white"></a>
-  <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
-</p>
+_Simple Neovim Config_
+
+![C](https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white)
+![C++](https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white)
+![Lua](https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white)
+![Rust](https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white)
+![Shell Script](https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white)
+
 <div align="center">
   <img width="750" alt="screenshot" src="./assets/screenshot.png">
 </div>
