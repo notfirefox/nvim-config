@@ -10,22 +10,23 @@ vim.api.nvim_create_autocmd("BufReadPost", {
     end,
 })
 
--- load color scheme
+-- last theme group
+local group = vim.api.nvim_create_augroup("last_theme", { clear = true })
+
+-- load last theme
 vim.api.nvim_create_autocmd("User", {
     pattern = "LazyVimStarted",
-    group = vim.api.nvim_create_augroup("load_theme", { clear = true }),
+    group = group,
     callback = function()
-        local theme = vim.g.COLOR_SCHEME
-        if theme ~= nil and theme ~= "" then
-            pcall(vim.cmd.colorscheme, theme)
-        end
+        local theme = vim.g.LAST_THEME or "default"
+        pcall(vim.cmd.colorscheme, theme)
     end,
 })
 
--- store color scheme
+-- store last theme
 vim.api.nvim_create_autocmd("ColorScheme", {
-    group = vim.api.nvim_create_augroup("store_theme", { clear = true }),
+    group = group,
     callback = function(params)
-        vim.g.COLOR_SCHEME = params.match
+        vim.g.LAST_THEME = params.match
     end,
 })

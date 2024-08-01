@@ -5,8 +5,5 @@ return {
         opts = {
             contrast = "hard",
         },
-        config = function(_, opts)
-            require("gruvbox").setup(opts)
-        end,
     },
 }
