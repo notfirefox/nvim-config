@@ -9,7 +9,7 @@
   <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
 </p>
 <div align="center">
-  <img width="750" alt="screenshot" src="./assets/screenshot.png">
+  <img width="820" alt="screenshot" src="./assets/screenshot.png">
 </div>
 
 ## :clipboard: Requirements 
