@@ -19,9 +19,8 @@ vim.api.nvim_create_autocmd("User", {
     group = group,
     callback = function()
         local theme = vim.g.LAST_THEME
-        if theme ~= nil and theme ~= "" then
-            pcall(vim.cmd.colorscheme, theme)
-        end
+        theme = theme or "default"
+        pcall(vim.cmd.colorscheme, theme)
     end,
 })
 
