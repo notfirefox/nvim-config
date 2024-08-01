@@ -1,5 +1,6 @@
 <h1 align="center">Neovim Config</h1>
 
+<p align="center"><i>Simple Neovim Config</i></p>
 <p align="center">
   <a href="https://www.open-std.org/jtc1/sc22/wg14/"><img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white"></a>
   <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white"></a>
@@ -7,28 +8,17 @@
   <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white"></a>
   <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
 </p>
-
-<p align="center"><i>Simple Neovim Config</i></p>
-
 <h4 align="center">
-  <a href="#features">Features</a>
-  ·
   <a href="#installation">Installation</a>
     ·
   <a href="#requirements">Requirements</a>
     ·
   <a href="https://github.com/notfirefox/nvim-config/wiki">Wiki</a>
 </h4>
-
-## Features
 <div align="center">
-  <h6>Auto Completion</h6>
   <img width="750" alt="screenshot-1" src="./assets/screenshot-1.png">
-  <h6>Fuzzy Finder</h6>
-  <img width="750" alt="screenshot-2" src="./assets/screenshot-2.png">
-  <h6>Git Integration</h6>
-  <img width="750" alt="screenshot-3" src="./assets/screenshot-3.png">
 </div>
+
 
 ## Installation
 Clone the repository into the config directory.
