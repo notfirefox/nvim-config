@@ -21,9 +21,14 @@
 </h4>
 
 ## Features
-- Autocompletion using [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-- Fuzzy Finder using [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-- Git Integration using [vim-fugitive](https://github.com/tpope/vim-fugitive)
+<div align="center">
+  <h6>Auto Completion</h6>
+  <img width="750" alt="screenshot-1" src="./assets/screenshot-1.png">
+  <h6>Fuzzy Finder</h6>
+  <img width="750" alt="screenshot-2" src="./assets/screenshot-2.png">
+  <h6>Git Integration</h6>
+  <img width="750" alt="screenshot-3" src="./assets/screenshot-3.png">
+</div>
 
 ## Installation
 Clone the repository into the config directory.
