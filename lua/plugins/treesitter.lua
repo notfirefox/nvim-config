@@ -2,6 +2,7 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        main = "nvim-treesitter.configs",
         opts = {
             ensure_installed = {
                 "bash",
@@ -19,8 +20,5 @@ return {
                 additional_vim_regex_highlighting = false,
             }
         },
-        config = function(_, opts)
-            require("nvim-treesitter.configs").setup(opts)
-        end,
     },
 }
