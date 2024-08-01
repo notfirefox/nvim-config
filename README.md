@@ -12,11 +12,11 @@
   <img width="750" alt="screenshot-1" src="./assets/screenshot-1.png">
 </div>
 
-## 📋 Requirements 
+## :clipboard: Requirements 
 - Homebrew
 - Linux or macOS
 
-## 📦 Installation
+## :package: Installation
 Clone the repository into the config directory.
 ```sh
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
@@ -26,3 +26,6 @@ Use `brew` to install the required dependencies.
 ```sh
 brew bundle --file ~/.config/nvim/Brewfile
 ```
+
+## :rocket: Usage
+Refer to the [Wiki](https://github.com/notfirefox/nvim-config/wiki) for more information.
