@@ -8,19 +8,15 @@
   <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white"></a>
   <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
 </p>
-<h4 align="center">
-  <a href="#installation">Installation</a>
-    ·
-  <a href="#requirements">Requirements</a>
-    ·
-  <a href="https://github.com/notfirefox/nvim-config/wiki">Wiki</a>
-</h4>
 <div align="center">
   <img width="750" alt="screenshot-1" src="./assets/screenshot-1.png">
 </div>
 
+## 📋 Requirements 
+- Homebrew
+- Linux or macOS
 
-## Installation
+## 📦 Installation
 Clone the repository into the config directory.
 ```sh
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
@@ -30,7 +26,3 @@ Use `brew` to install the required dependencies.
 ```sh
 brew bundle --file ~/.config/nvim/Brewfile
 ```
-
-## Requirements 
-- Linux or macOS
-- Homebrew
