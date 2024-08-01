@@ -18,7 +18,7 @@ vim.api.nvim_create_autocmd("User", {
     pattern = "LazyVimStarted",
     group = group,
     callback = function()
-        local theme = vim.g.COLOR_SCHEME
+        local theme = vim.g.LAST_THEME
         if theme ~= nil and theme ~= "" then
             pcall(vim.cmd.colorscheme, theme)
         end
@@ -29,6 +29,6 @@ vim.api.nvim_create_autocmd("User", {
 vim.api.nvim_create_autocmd("ColorScheme", {
     group = group,
     callback = function(params)
-        vim.g.COLOR_SCHEME = params.match
+        vim.g.LAST_THEME = params.match
     end,
 })
