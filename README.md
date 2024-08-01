@@ -32,4 +32,5 @@ brew bundle --file ~/.config/nvim/Brewfile
 ```
 
 ## Requirements 
-Install [Homebrew](https://brew.sh/) to have access to the latest developer tools.
+- Linux or macOS
+- Homebrew
