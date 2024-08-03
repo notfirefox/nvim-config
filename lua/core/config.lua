@@ -20,6 +20,9 @@ vim.opt.wrap = false
 vim.opt.list = true
 vim.opt.listchars = "tab:>-"
 
+-- popup menu height
+vim.opt.pumheight = 16
+
 -- color column
 vim.opt.colorcolumn = "80"
 
