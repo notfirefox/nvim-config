@@ -16,6 +16,13 @@ return {
             completion = {
                 completeopt = "menu,menuone,noinsert"
             },
+            formatting = {
+                fields = { "abbr", "kind" },
+                format = function(_, vim_item)
+                    vim_item.menu = ""
+                    return vim_item
+                end
+            },
             mapping = cmp.mapping.preset.insert({
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({
