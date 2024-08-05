@@ -10,7 +10,6 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 
 -- undo settings
-vim.opt.undodir = vim.fn.expand("~/.vim/undodir")
 vim.opt.undofile = true
 
 -- no wrapping
