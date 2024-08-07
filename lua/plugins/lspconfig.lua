@@ -1,3 +1,10 @@
+-- create clang-format file
+local file = vim.fn.expand("~/.clang-format")
+if not vim.uv.fs_stat(file) then
+    local text = { "---", "BasedOnStyle: LLVM", "IndentWidth: 4" }
+    vim.fn.writefile(text, file)
+end
+
 return {
     "neovim/nvim-lspconfig",
     config = function()
