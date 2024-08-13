@@ -16,6 +16,18 @@ return {
             completion = {
                 completeopt = "menu,menuone,noinsert"
             },
+            enabled = function()
+                local context = require("cmp.config.context")
+                local get_option_val = vim.api.nvim_get_option_value
+
+                local b = false
+                b = b or (get_option_val("buftype", { buf = 0 }) == "prompt")
+                b = b or (vim.fn.reg_recording() ~= "")
+                b = b or (vim.fn.reg_executing() ~= "")
+                b = b or (context.in_treesitter_capture("comment"))
+                b = b or (context.in_syntax_group("Comment"))
+                return not b
+            end,
             formatting = {
                 fields = { "abbr", "kind" },
                 format = function(_, vim_item)
