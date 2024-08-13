@@ -8,9 +8,12 @@
   <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white"></a>
   <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
 </p>
-<div align="center">
-  <img width="743" alt="screenshot" src="./assets/screenshot.png">
-</div>
+<p align="center">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./assets/screenshot-dark.png" width="735px" alt="screenshot"/>
+      <img src="./assets/screenshot-light.png" width="735px" alt="screenshot"/>
+    </picture>
+</p>
 
 ## :clipboard: Requirements 
 - Homebrew
