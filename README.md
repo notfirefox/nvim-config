@@ -2,13 +2,12 @@
 
 <p align="center"><i>Simple Neovim Config</i></p>
 <p align="center">
-  <a href="https://www.open-std.org/jtc1/sc22/wg14/"><img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white"></a>
-  <a href="https://isocpp.org/"><img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white"></a>
-  <a href="https://www.lua.org/"><img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white"></a>
-  <a href="https://www.rust-lang.org/"><img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white"></a>
-  <a href="https://www.gnu.org/software/bash/"><img src="https://img.shields.io/badge/shell_script-%23121011.svg?style=flat&logo=gnu-bash&logoColor=white"></a>
-</p>
-<p align="center">
+  <img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white">
+  <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white">
+  <img src="https://img.shields.io/badge/haskell-5e5086?style=flat&logo=haskell&logoColor=white">
+  <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=flat&logo=lua&logoColor=white">
+  <img src="https://img.shields.io/badge/rust-%23000000.svg?style=flat&logo=rust&logoColor=white">
+  <br>
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./assets/screenshot-dark.png" width="735px" alt="screenshot"/>
     <img src="./assets/screenshot-light.png" width="735px" alt="screenshot"/>
