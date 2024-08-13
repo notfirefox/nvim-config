@@ -72,6 +72,16 @@ return {
             end,
         }
 
+        -- haskell
+        lspconfig.hls.setup {
+            capabilities = capabilities,
+            settings = {
+                haskell = {
+                    formattingProvider = "fourmolu"
+                }
+            }
+        }
+
         -- lua
         lspconfig.lua_ls.setup {
             capabilities = capabilities,
