@@ -3,7 +3,7 @@
 </p>
 <h1 align="center">Neovim Config</h1>
 
-<p align="center"><i>Simple Neovim Config</i></p>
+<p align="center"><i>Minimal Neovim Config for Modern Languages</i></p>
 <p align="center">
   <img src="https://img.shields.io/badge/c-%2300599C.svg?style=flat&logo=c&logoColor=white">
   <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat&logo=c%2B%2B&logoColor=white">
