@@ -1,3 +1,6 @@
+<p align="center">
+  <img src="./assets/nvim-logo.svg" width="50px" alt="screenshot"/>
+</p>
 <h1 align="center">Neovim Config</h1>
 
 <p align="center"><i>Simple Neovim Config</i></p>
