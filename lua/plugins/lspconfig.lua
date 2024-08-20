@@ -26,7 +26,7 @@ return {
             callback = function(ev)
                 local opts = { buffer = ev.buf }
                 local bind = vim.keymap.set
-                bind('n', 'K', vim.lsp.buf.hover, opts)
+                bind("n", "K", vim.lsp.buf.hover, opts)
                 bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
                 bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
             end,
