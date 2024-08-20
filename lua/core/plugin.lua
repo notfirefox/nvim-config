@@ -30,4 +30,23 @@ require("lazy").setup({
     rocks = {
         enabled = false,
     },
+    ui = {
+        icons = {
+            cmd = "[cmd]",
+            config = "[config]",
+            event = "[event]",
+            favorite = "[fav]",
+            ft = "[ft]",
+            init = "[init]",
+            import = "[import]",
+            keys = "[keys]",
+            lazy = "",
+            plugin = "[plugin]",
+            runtime = "[rt]",
+            require = "[require]",
+            source = "[src]",
+            start = "[start]",
+            list = { "●" },
+        },
+    },
 })
