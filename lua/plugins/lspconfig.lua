@@ -38,12 +38,12 @@ return {
         })
 
         -- bash
-        lspconfig.bashls.setup {
+        lspconfig.bashls.setup({
             capabilities = capabilities,
-        }
+        })
 
         -- clangd
-        lspconfig.clangd.setup {
+        lspconfig.clangd.setup({
             capabilities = capabilities,
             on_init = function(client)
                 local request = client.rpc.request
@@ -70,20 +70,20 @@ return {
                     return request(method, params, new_handler, ...)
                 end
             end,
-        }
+        })
 
         -- haskell
-        lspconfig.hls.setup {
+        lspconfig.hls.setup({
             capabilities = capabilities,
             settings = {
                 haskell = {
                     formattingProvider = "fourmolu"
                 }
             }
-        }
+        })
 
         -- lua
-        lspconfig.lua_ls.setup {
+        lspconfig.lua_ls.setup({
             capabilities = capabilities,
             on_init = function(client)
                 local path = client.workspace_folders[1].name
@@ -109,10 +109,10 @@ return {
             settings = {
                 Lua = {}
             }
-        }
+        })
 
         -- rust
-        lspconfig.rust_analyzer.setup {
+        lspconfig.rust_analyzer.setup({
             capabilities = capabilities,
             settings = {
                 ["rust-analyzer"] = {
@@ -124,6 +124,6 @@ return {
                     }
                 }
             }
-        }
+        })
     end,
 }
