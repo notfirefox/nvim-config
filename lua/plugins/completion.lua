@@ -14,7 +14,7 @@ return {
         -- setup nvim-cmp
         cmp.setup {
             completion = {
-                completeopt = "menu,menuone,noinsert"
+                completeopt = table.concat(vim.opt.completeopt:get(), ",")
             },
             enabled = function()
                 local context = require("cmp.config.context")
