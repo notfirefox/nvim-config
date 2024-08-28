@@ -49,6 +49,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
             bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         end
 
+        if client.supports_method(methods.textDocument_completion)
+        then
+            bind("i", "<CR>", utils.lsp.on_cr, opts)
+            bind("i", "<C-Space>", vim.lsp.completion.trigger, opts)
+            utils.lsp.enable_auto_completion(args.buf, client.id)
+        end
+
         if client.supports_method(methods.textDocument_hover) then
             bind("n", "K", vim.lsp.buf.hover, opts)
         end

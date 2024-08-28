@@ -3,7 +3,6 @@ return {
     config = function()
         -- variables
         local lspconfig = require("lspconfig")
-        local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
         -- disable diagnostic signs
         vim.diagnostic.config({
@@ -11,13 +10,10 @@ return {
         })
 
         -- bash
-        lspconfig.bashls.setup({
-            capabilities = capabilities,
-        })
+        lspconfig.bashls.setup()
 
         -- clangd
         lspconfig.clangd.setup({
-            capabilities = capabilities,
             on_init = function(client)
                 local request = client.rpc.request
                 function client.rpc.request(method, params, handler, ...)
@@ -47,7 +43,6 @@ return {
 
         -- haskell
         lspconfig.hls.setup({
-            capabilities = capabilities,
             settings = {
                 haskell = {
                     formattingProvider = "fourmolu"
@@ -57,7 +52,6 @@ return {
 
         -- lua
         lspconfig.lua_ls.setup({
-            capabilities = capabilities,
             on_init = function(client)
                 local path = client.workspace_folders[1].name
                 if vim.uv.fs_stat(path .. "/.luarc.json") or
@@ -89,7 +83,6 @@ return {
 
         -- rust
         lspconfig.rust_analyzer.setup({
-            capabilities = capabilities,
             settings = {
                 ["rust-analyzer"] = {
                     check = {
