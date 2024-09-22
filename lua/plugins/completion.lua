@@ -14,7 +14,7 @@ return {
         -- setup nvim-cmp
         cmp.setup {
             completion = {
-                completeopt = table.concat(vim.opt.completeopt:get(), ",")
+                completeopt = vim.o.completeopt,
             },
             enabled = function()
                 local context = require("cmp.config.context")

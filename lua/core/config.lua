@@ -1,32 +1,32 @@
 -- line numbers
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 
 -- tab settings
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.o.shiftwidth = 4
+vim.o.expandtab = true
+vim.o.smartindent = true
 
 -- undo settings
-vim.opt.undofile = true
+vim.o.undofile = true
 
 -- no wrapping
-vim.opt.wrap = false
+vim.o.wrap = false
 
 -- visualize tabs
-vim.opt.list = true
-vim.opt.listchars = "tab:>-"
+vim.o.list = true
+vim.o.listchars = "tab:>-"
 
 -- popup menu height
-vim.opt.pumheight = 10
+vim.o.pumheight = 10
 
 -- complete options
-vim.opt.completeopt = "menu,menuone,noinsert"
+vim.o.completeopt = "menu,menuone,noinsert"
 
 -- color column
-vim.opt.colorcolumn = "80"
+vim.o.colorcolumn = "80"
 
 -- set leader key
 vim.g.mapleader = " "
