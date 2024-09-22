@@ -45,7 +45,7 @@ return {
                 return branch .. " %<%f %h%m%r%=%-14.(%l,%c%V%) %P"
             end
 
-            vim.opt.statusline = "%!luaeval('CustomStatusLine()')"
+            vim.o.statusline = "%!luaeval('CustomStatusLine()')"
         end,
     }
 }

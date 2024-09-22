@@ -20,7 +20,7 @@ if not vim.uv.fs_stat(lazypath) then
         os.exit(1)
     end
 end
-vim.opt.rtp:prepend(lazypath)
+vim.o.runtimepath = lazypath .. "," .. vim.o.runtimepath
 
 -- setup plugins
 require("lazy").setup({
