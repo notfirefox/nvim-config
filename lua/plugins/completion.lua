@@ -1,10 +1,13 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
+        "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp",
+        "saadparwaiz1/cmp_luasnip",
     },
     config = function()
         -- variables
+        local luasnip = require("luasnip")
         local cmp_autopairs = require("nvim-autopairs.completion.cmp")
         local cmp = require("cmp")
 
@@ -35,6 +38,11 @@ return {
                     return vim_item
                 end
             },
+            snippet = {
+                expand = function(args)
+                    luasnip.lsp_expand(args.body)
+                end,
+            },
             mapping = cmp.mapping.preset.insert({
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<CR>"] = cmp.mapping.confirm({
@@ -42,15 +50,15 @@ return {
                     select = true,
                 }),
                 ["<Tab>"] = cmp.mapping(function(fallback)
-                    if vim.snippet.active({ direction = 1 }) then
-                        vim.snippet.jump(1)
+                    if luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
                     else
                         fallback()
                     end
                 end, { "i", "s" }),
                 ["<S-Tab>"] = cmp.mapping(function(fallback)
-                    if vim.snippet.active({ direction = -1 }) then
-                        vim.snippet.jump(-1)
+                    if luasnip.jumpable(-1) then
+                        luasnip.jump(-1)
                     else
                         fallback()
                     end
