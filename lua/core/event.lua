@@ -41,25 +41,24 @@ vim.api.nvim_create_autocmd("LspAttach", {
         end
 
         local bind = vim.keymap.set
-        local methods = vim.lsp.protocol.Methods
         local opts = { buffer = args.buf }
         local utils = require("core.utils")
 
-        if client.supports_method(methods.textDocument_codeAction) then
+        if client.supports_method("textDocument/codeAction") then
             bind("n", "<leader>ca", vim.lsp.buf.code_action, opts)
         end
 
-        if client.supports_method(methods.textDocument_hover) then
+        if client.supports_method("textDocument/hover") then
             bind("n", "K", vim.lsp.buf.hover, opts)
         end
 
-        if client.supports_method(methods.textDocument_formatting)
+        if client.supports_method("textDocument/formatting")
         then
             utils.lsp.add_formatting_autocmd(args.buf, client.id)
             utils.lsp.create_clang_format()
         end
 
-        if client.supports_method(methods.textDocument_rename) then
+        if client.supports_method("textDocument/rename") then
             bind("n", "<leader>rn", vim.lsp.buf.rename, opts)
         end
     end,
