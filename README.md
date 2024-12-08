@@ -21,8 +21,8 @@ Simple Neovim Config
     </div>
 </details>
 
-## :clipboard: Requirements 
-- Homebrew
+## :clipboard: Requirements
+- Neovim 0.9.5+
 - Linux or macOS
 
 ## :package: Installation
@@ -31,7 +31,120 @@ Clone the repository into the config directory.
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 ```
 
-Use `brew` to install the required dependencies.
+### Fedora
+###### Base
 ```sh
-brew bundle --file ~/.config/nvim/Brewfile
+dnf install fd-find neovim ripgrep
+```
+###### Bash
+```sh
+dnf install nodejs-bash-language-server shellcheck
+```
+###### C/C++
+```sh
+dnf install clang-tools-extra cmake gcc gcc-g++
+```
+###### Haskell
+```sh
+dnf -y copr enable petersen/haskell-language-server
+```
+```sh
+dnf install haskell-language-server
+```
+###### Lua
+```sh
+dnf -y copr enable yorickpeterse/lua-language-server
+```
+```sh
+dnf install lua-language-server
+```
+###### Rust
+```sh
+dnf install clippy rust-analyzer rustfmt
+```
+
+### Ubuntu
+###### Base
+```sh
+apt install fd-find neovim ripgrep
+```
+###### Bash
+```sh
+apt install npm shellcheck
+```
+```sh
+npm config set prefix "$HOME/.local/"
+```
+```sh
+npm install -g bash-language-server
+```
+###### C/C++
+```sh
+apt install build-essential clangd cmake
+```
+###### Haskell
+```sh
+curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | sh
+```
+```sh
+ghcup install ghc
+```
+```sh
+ghcup install hls
+```
+###### Lua
+```sh
+apt install jq
+```
+```sh
+ver=$(curl -s "https://api.github.com/repos/LuaLS/lua-language-server/releases/latest" | jq --raw-output '.tag_name')
+```
+```sh
+curl -o ~/Downloads/luals.tar.gz \
+  "https://github.com/LuaLS/lua-language-server/releases/download/$ver/lua-language-server-$ver-linux-x64.tar.gz"
+```
+```sh
+mkdir -p ~/.local/share/luals
+```
+```sh
+tar xf ~/Downloads/luals.tar.gz -C ~/.local/share/luals
+```
+```sh
+ln -s ~/.local/share/luals/bin/lua-language-server ~/.local/bin/lua-language-server
+```
+###### Rust
+```sh
+apt install rustup
+```
+```sh
+rustup default stable
+```
+```sh
+rustup component add rust-analyzer
+```
+
+### macOS
+###### Base
+```sh
+brew install fd neovim ripgrep
+```
+###### Bash
+```sh
+brew install bash-language-server shellcheck
+```
+###### C/C++
+```sh
+brew install cmake llvm
+```
+###### Haskell
+```sh
+brew install ghc haskell-language-server
+```
+###### Lua
+```sh
+brew install lua-language-server
+```
+###### Rust
+```sh
+brew install rust rust-analyzer
 ```
