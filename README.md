@@ -73,7 +73,7 @@ apt install fd-find neovim ripgrep
 apt install npm shellcheck
 ```
 ```sh
-npm config set prefix "$HOME/.local/"
+npm config set prefix ~/.local/
 ```
 ```sh
 npm install -g bash-language-server
@@ -97,7 +97,7 @@ ghcup install hls
 apt install jq
 ```
 ```sh
-ver=$(curl -s "https://api.github.com/repos/LuaLS/lua-language-server/releases/latest" | jq --raw-output '.tag_name')
+ver=$(curl -s "https://api.github.com/repos/LuaLS/lua-language-server/releases/latest" | jq -r '.tag_name')
 ```
 ```sh
 curl -o ~/Downloads/luals.tar.gz \
