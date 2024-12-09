@@ -73,7 +73,10 @@ apt install fd-find neovim ripgrep
 apt install npm shellcheck
 ```
 ```sh
-npm install -g --prefix ~/.local bash-language-server
+npm config set prefix "$HOME/.local/"
+```
+```sh
+npm install -g bash-language-server
 ```
 ###### C/C++
 ```sh
