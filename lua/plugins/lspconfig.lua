@@ -1,6 +1,22 @@
 return {
     "neovim/nvim-lspconfig",
+    dependencies = {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
+        -- mason
+        require("mason").setup()
+        require("mason-lspconfig").setup({
+            ensure_installed = {
+                "bashls", -- requires npm, shellcheck
+                "clangd",
+                -- "hls", -- requires ghcup
+                "lua_ls",
+                "rust_analyzer"
+            },
+        })
+
         -- variables
         local lspconfig = require("lspconfig")
         local capabilities = require("cmp_nvim_lsp").default_capabilities()
