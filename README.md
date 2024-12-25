@@ -22,7 +22,7 @@ Simple Neovim Config
 </details>
 
 ## :clipboard: Requirements
-- Neovim 0.9.5+
+- Neovim >= 0.9.5
 - Linux or macOS
 
 ## :package: Installation
