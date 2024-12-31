@@ -31,11 +31,6 @@ Clone the repository into the config directory.
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 ```
 
-###### Fedora
-```sh
-dnf install fd-find neovim npm ripgrep shellcheck
-```
-
 ###### Ubuntu
 ```sh
 apt install fd-find neovim npm ripgrep shellcheck
