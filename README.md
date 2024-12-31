@@ -31,12 +31,12 @@ Clone the repository into the config directory.
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 ```
 
-###### Ubuntu
-```sh
-apt install fd-find neovim npm ripgrep shellcheck
-```
-
 ###### macOS
 ```sh
 brew install fd neovim node ripgrep shellcheck
+```
+
+###### Ubuntu
+```sh
+apt install fd-find neovim npm ripgrep shellcheck
 ```
