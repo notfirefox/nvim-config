@@ -2,7 +2,7 @@ return {
     {
         "nvim-telescope/telescope.nvim",
         dependencies = { "nvim-lua/plenary.nvim" },
-        enabled = (vim.g.snacks_picker ~= 1),
+        enabled = (vim.g.file_picker == "telescope"),
         version = "0.1.8",
         keys = {
             {

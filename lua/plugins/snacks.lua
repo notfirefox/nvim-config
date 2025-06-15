@@ -1,6 +1,6 @@
 return {
     "folke/snacks.nvim",
-    enabled = (vim.g.snacks_picker == 1),
+    enabled = (vim.g.file_picker == "snacks"),
     priority = 1000,
     lazy = false,
     opts = {

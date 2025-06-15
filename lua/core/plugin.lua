@@ -22,8 +22,10 @@ if not vim.uv.fs_stat(lazypath) then
 end
 vim.o.runtimepath = lazypath .. "," .. vim.o.runtimepath
 
--- set to 1 to use snacks picker instead of telescope
-vim.g.snacks_picker = 1
+-- select the file picker by setting the string to one of those values:
+-- * snacks
+-- * telescope
+vim.g.file_picker = "snacks"
 
 -- setup plugins
 require("lazy").setup({
