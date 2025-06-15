@@ -34,10 +34,10 @@ git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 
 ###### macOS
 ```sh
-brew install fd neovim ripgrep tree-sitter
+brew install fd fzf neovim ripgrep tree-sitter
 ```
 
 ###### Ubuntu
 ```sh
-sudo apt install fd-find neovim ripgrep tree-sitter-cli
+sudo apt install fd-find fzf neovim ripgrep tree-sitter-cli
 ```

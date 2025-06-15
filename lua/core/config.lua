@@ -35,3 +35,6 @@ end
 
 -- set ruler format
 vim.o.rulerformat = "%{%v:lua.CustomRulerFormat()%}"
+
+-- set cursor style
+vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
