@@ -12,7 +12,8 @@ return {
             },
             layout = {
                 preset = function()
-                    return vim.o.columns >= 120 and "telescope" or "compact"
+                    return vim.o.columns >= 120 and "telescope"
+                        or "telescope_no_preview"
                 end,
             },
             layouts = {
@@ -49,7 +50,7 @@ return {
                         },
                     },
                 },
-                compact = {
+                telescope_no_preview = {
                     preset = "telescope",
                     preview = false,
                 },
