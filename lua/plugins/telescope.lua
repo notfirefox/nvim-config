@@ -5,36 +5,11 @@ return {
         enabled = (vim.g.file_picker == "telescope"),
         version = "0.1.8",
         keys = {
-            {
-                "<Leader>b",
-                function()
-                    require("telescope.builtin").git_branches()
-                end,
-            },
-            {
-                "<Leader>e",
-                function()
-                    require("telescope.builtin").buffers()
-                end,
-            },
-            {
-                "<Leader>f",
-                function()
-                    require("telescope.builtin").find_files({ hidden = true })
-                end,
-            },
-            {
-                "<Leader>g",
-                function()
-                    require("telescope.builtin").live_grep()
-                end,
-            },
-            {
-                "<Leader>h",
-                function()
-                    require("telescope.builtin").help_tags()
-                end,
-            },
+            { "<Leader>b", "<Cmd>Telescope git_branches<CR>" },
+            { "<Leader>e", "<Cmd>Telescope buffers<CR>" },
+            { "<Leader>f", "<Cmd>Telescope find_files<CR>" },
+            { "<Leader>g", "<Cmd>Telescope live_grep<CR>" },
+            { "<Leader>h", "<Cmd>Telescope help_tags<CR>" },
         },
         opts = {
             defaults = {
