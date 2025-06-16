@@ -10,6 +10,7 @@ return {
             { "<Leader>f", "<Cmd>Telescope find_files<CR>" },
             { "<Leader>g", "<Cmd>Telescope live_grep<CR>" },
             { "<Leader>h", "<Cmd>Telescope help_tags<CR>" },
+            { "<Leader>H", "<Cmd>Telescope highlights<CR>" },
         },
         opts = {
             defaults = {
