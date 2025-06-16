@@ -8,6 +8,6 @@ return {
         { "<Leader>f", "<Cmd>FzfLua files<CR>" },
         { "<Leader>g", "<Cmd>FzfLua grep<CR>" },
         { "<Leader>h", "<Cmd>FzfLua helptags<CR>" },
-        { "<Leader>H", "<Cmd>FzfLua highlights files<CR>" },
+        { "<Leader>H", "<Cmd>FzfLua highlights<CR>" },
     },
 }
