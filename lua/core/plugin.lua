@@ -25,7 +25,6 @@ vim.o.runtimepath = lazypath .. "," .. vim.o.runtimepath
 -- select the file picker by setting the string to one of those values:
 -- * fzf
 -- * snacks
--- * telescope
 vim.g.file_picker = "fzf"
 
 -- setup plugins
