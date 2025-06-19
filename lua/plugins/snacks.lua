@@ -10,49 +10,15 @@ return {
                 files = { enabled = false },
                 git = { enabled = false },
             },
-            layout = {
-                preset = function()
-                    return vim.o.columns >= 120 and "telescope"
-                        or "telescope_no_preview"
-                end,
-            },
             layouts = {
-                telescope = {
-                    reverse = true,
+                vertical = {
                     layout = {
-                        box = "horizontal",
-                        backdrop = false,
+                        backdrop = true,
                         width = 0.8,
-                        height = 0.9,
-                        border = "none",
-                        {
-                            box = "vertical",
-                            {
-                                win = "list",
-                                title = " Results ",
-                                title_pos = "center",
-                                border = "rounded",
-                            },
-                            {
-                                win = "input",
-                                height = 1,
-                                border = "rounded",
-                                title = "{title} {flags}",
-                                title_pos = "center",
-                            },
-                        },
-                        {
-                            win = "preview",
-                            title = "{preview:Preview}",
-                            width = 0.5,
-                            border = "rounded",
-                            title_pos = "center",
-                        },
+                        height = 0.8,
+                        min_width = 0,
+                        min_height = 0,
                     },
-                },
-                telescope_no_preview = {
-                    preset = "telescope",
-                    preview = false,
                 },
             },
             prompt = "> ",
