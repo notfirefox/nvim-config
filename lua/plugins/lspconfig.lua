@@ -36,15 +36,6 @@ return {
             end,
         })
 
-        -- configure haskell language server
-        vim.lsp.config("hls", {
-            settings = {
-                haskell = {
-                    formattingProvider = "fourmolu",
-                },
-            },
-        })
-
         -- configure lua language server
         vim.lsp.config("lua_ls", {
             on_init = function(client)
@@ -94,7 +85,6 @@ return {
         -- enable language servers
         vim.lsp.enable({
             "clangd",
-            "hls",
             "lua_ls",
             "pylsp",
             "rust_analyzer",

@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 
 -- set tab to four spaces for certain languages
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "haskell", "lua", "rust" },
+    pattern = { "lua", "rust" },
     callback = function()
         vim.bo.tabstop = 4
         vim.bo.softtabstop = 4
