@@ -68,26 +68,11 @@ return {
             },
         })
 
-        -- configure rust language server
-        vim.lsp.config("rust_analyzer", {
-            settings = {
-                ["rust-analyzer"] = {
-                    check = {
-                        command = "clippy",
-                    },
-                    diagnostics = {
-                        enable = false,
-                    },
-                },
-            },
-        })
-
         -- enable language servers
         vim.lsp.enable({
             "clangd",
             "lua_ls",
             "pylsp",
-            "rust_analyzer",
         })
     end,
 }
