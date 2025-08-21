@@ -71,6 +71,7 @@ return {
         -- enable language servers
         vim.lsp.enable({
             "clangd",
+            "gopls",
             "lua_ls",
             "pylsp",
         })
