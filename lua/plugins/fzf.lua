@@ -1,6 +1,5 @@
 return {
     "ibhagwan/fzf-lua",
-    enabled = (vim.g.file_picker == "fzf"),
     opts = {},
     keys = {
         { "<Leader>b", "<Cmd>FzfLua git_branches<CR>" },

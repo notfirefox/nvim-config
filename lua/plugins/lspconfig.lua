@@ -1,79 +1,30 @@
 return {
     "neovim/nvim-lspconfig",
     config = function()
-        -- customize diagnostics
-        vim.diagnostic.config({
-            signs = false,
-            virtual_text = true,
-        })
+        if vim.fn.has("nvim-0.11") == 0 then
+            local lspconfig = require("lspconfig")
+            local lsp_path = vim.fn.stdpath("config") .. "/after/lsp/"
 
-        -- configure clangd language server
-        vim.lsp.config("clangd", {
-            on_init = function(client)
-                local request = client.rpc.request
-                function client.rpc.request(method, params, handler, ...)
-                    if method ~= "textDocument/completion" then
-                        return request(method, params, handler, ...)
+            for name, type in vim.fs.dir(lsp_path) do
+                if name:match("%.lua$") and type == "file" then
+                    local lsp = name:gsub("%.lua$", "")
+                    local config = dofile(lsp_path .. name)
+                    local cmd =
+                        lspconfig[lsp].document_config.default_config.cmd[1]
+
+                    if vim.fn.executable(cmd) == 1 then
+                        local blink = require("blink.cmp")
+                        config.capabilities = blink.get_lsp_capabilities(
+                            lspconfig[lsp].capabilities
+                        )
+                        lspconfig[lsp].setup(config)
                     end
-                    local new_handler = function(...)
-                        local err, result = ...
-                        if err or not result then
-                            return handler(...)
-                        end
-                        local items = result.items or result
-                        for _, item in ipairs(items) do
-                            local kind = vim.lsp.protocol.CompletionItemKind
-                            if item.kind == kind.Snippet then
-                                local text = item.textEdit.newText
-                                text = text:gsub("{\n", "{\n\t")
-                                item.textEdit.newText = text
-                            end
-                        end
-                        return handler(...)
-                    end
-                    return request(method, params, new_handler, ...)
                 end
-            end,
-        })
+            end
+        end
 
-        -- configure lua language server
-        vim.lsp.config("lua_ls", {
-            on_init = function(client)
-                local path = client.workspace_folders[1].name
-                if
-                    vim.uv.fs_stat(path .. "/.luarc.json")
-                    or vim.uv.fs_stat(path .. "/.luarc.jsonc")
-                then
-                    return
-                end
-                client.config.settings.Lua =
-                    vim.tbl_deep_extend("force", client.config.settings.Lua, {
-                        completion = {
-                            callSnippet = "Replace",
-                        },
-                        runtime = {
-                            version = "LuaJIT",
-                        },
-                        workspace = {
-                            checkThirdParty = false,
-                            library = {
-                                vim.env.VIMRUNTIME,
-                                "${3rd}/luv/library",
-                            },
-                        },
-                    })
-            end,
-            settings = {
-                Lua = {},
-            },
-        })
-
-        -- enable language servers
-        vim.lsp.enable({
-            "clangd",
-            "gopls",
-            "lua_ls",
-            "pylsp",
-        })
+        if vim.fn.has("nvim-0.11") == 1 then
+            vim.lsp.enable({ "clangd", "gopls", "lua_ls", "pylsp" })
+        end
     end,
 }

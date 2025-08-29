@@ -28,13 +28,8 @@ vim.g.loaded_ruby_provider = 0
 -- set leader key
 vim.g.mapleader = vim.keycode("<Space>")
 
--- include loading status
-function CustomRulerFormat()
-    return "%l,%c%V%=" .. (vim.g.loading_status or "%P")
-end
-
--- set ruler format
-vim.o.rulerformat = "%{%v:lua.CustomRulerFormat()%}"
-
 -- set cursor style
 vim.o.guicursor = "n-v-c-sm:block,i-ci-ve:ver25,r-cr-o:hor20"
+
+-- customize diagnostics
+vim.diagnostic.config({ signs = false, virtual_text = true })

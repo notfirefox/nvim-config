@@ -31,50 +31,31 @@ vim.api.nvim_create_autocmd("ColorScheme", {
     end,
 })
 
--- set tab to four spaces for certain languages
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "lua" },
-    callback = function()
-        vim.bo.tabstop = 4
-        vim.bo.softtabstop = 4
-        vim.bo.shiftwidth = 4
-        vim.bo.expandtab = true
-        vim.bo.smartindent = true
-    end,
-})
-
--- update loading status
-vim.api.nvim_create_autocmd("LspProgress", {
-    group = vim.api.nvim_create_augroup("lsp_progress", { clear = true }),
-    callback = function(ev)
-        local spinner = {
-            "⠋",
-            "⠙",
-            "⠹",
-            "⠸",
-            "⠼",
-            "⠴",
-            "⠦",
-            "⠧",
-            "⠇",
-            "⠏",
-        }
-        if ev.data.params.value.kind == "end" then
-            vim.g.loading_status = nil
-        else
-            vim.g.loading_status =
-                spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
-        end
-        vim.cmd.redrawstatus()
-    end,
-})
-
 -- configure language server
 vim.api.nvim_create_autocmd("LspAttach", {
     group = vim.api.nvim_create_augroup("lsp_attach", { clear = true }),
     callback = function(args)
+        local bind = vim.keymap.set
+        local opts = { buffer = args.buf }
+        bind("n", "grn", vim.lsp.buf.rename, opts)
+        bind("n", "grr", vim.lsp.buf.references, opts)
+        bind("n", "gri", vim.lsp.buf.implementation, opts)
+        bind("n", "gO", vim.lsp.buf.document_symbol, opts)
+        bind({ "n", "v" }, "gra", vim.lsp.buf.code_action, opts)
+        -- CTRL-S in Insert and Select mode maps to vim.lsp.buf.signature_help()
+        -- [d and ]d move between diagnostics in the current buffer
+        -- [D jumps to the first diagnostic, ]D jumps to the last
+
+        local function supports_method(client, method, bufnr)
+            if vim.fn.has("nvim-0.11") == 1 then
+                return client:supports_method(method, bufnr)
+            else
+                return client.supports_method(method, { bufnr = bufnr })
+            end
+        end
+
         local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
-        if client:supports_method("textDocument/formatting", args.buf) then
+        if supports_method(client, "textDocument/formatting", args.buf) then
             local utils = require("core.utils")
             utils.add_formatting_autocmd(args.buf, client.id)
             utils.create_clang_format()
