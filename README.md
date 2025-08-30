@@ -23,7 +23,6 @@ Simple Neovim Config
 
 ## :clipboard: Requirements
 - Neovim >= 0.10
-- Linux or macOS
 
 ## :package: Installation
 Clone the repository into the config directory.
@@ -31,12 +30,12 @@ Clone the repository into the config directory.
 git clone "https://github.com/notfirefox/nvim-config.git" ~/.config/nvim
 ```
 
+###### Debian
+```sh
+sudo apt install fd-find fzf neovim ripgrep tree-sitter-cli
+```
+
 ###### macOS
 ```sh
 brew install fd fzf neovim ripgrep tree-sitter
-```
-
-###### Ubuntu
-```sh
-sudo apt install fd-find fzf neovim ripgrep tree-sitter-cli
 ```
